@@ -1,6 +1,6 @@
 ---
-title: tages
-type: tages
+title: tags
+type: tags
 ---
 
 ```

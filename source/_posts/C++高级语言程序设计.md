@@ -1,7 +1,9 @@
 ---
 title: C++高级语言程序设计
-sticky: 999
-
+categories:
+- 计算机
+tags:
+- c++
 ---
 
 #  C++ 概述
