@@ -1,6 +1,10 @@
 ---
 title: Day6:知识点记录
 date: 2020-9-23
+categories:
+- web前端
+tags:
+- Javascript
 ---
 # Object.keys、Object.values、Object.entries
 

@@ -1,6 +1,10 @@
 ---
 title: Day13:知识点记录
 date: 2020-10-1
+categories:
+- web前端
+tags:
+- Javascript
 ---
 
 # 复习

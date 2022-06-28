@@ -1,6 +1,10 @@
 ---
 title: Day2:知识点记录
 date: 2020-9-20
+categories:
+- web前端
+tags:
+- Javascript
 ---
 
 # 数组方法总结

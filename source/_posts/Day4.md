@@ -1,6 +1,10 @@
 ---
 title: Day4:知识点记录
 date: 2020-9-21
+categories:
+- web前端
+tags:
+- Javascript
 ---
 
 - for of 的原理？

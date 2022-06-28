@@ -1,6 +1,10 @@
 ---
 title: Day5:知识点记录
 date: 2020-9-22
+categories:
+- web前端
+tags:
+- Javascript
 ---
 
 # 136 只出现一次的数字(位运算的妙用)
