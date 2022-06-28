@@ -4,7 +4,7 @@ date: 2020-9-27
 categories:
 - web前端
 tags:
-- Javascript
+- javascript
 ---
 # 1. 清除定时器
 

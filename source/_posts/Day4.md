@@ -4,7 +4,7 @@ date: 2020-9-21
 categories:
 - web前端
 tags:
-- Javascript
+- javascript
 ---
 
 - for of 的原理？

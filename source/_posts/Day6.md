@@ -4,7 +4,7 @@ date: 2020-9-23
 categories:
 - web前端
 tags:
-- Javascript
+- javascript
 ---
 # Object.keys、Object.values、Object.entries
 

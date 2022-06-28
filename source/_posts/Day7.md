@@ -4,7 +4,7 @@ date: 2020-9-24
 categories:
 - web前端
 tags:
-- Javascript
+- javascript
 ---
 # 结构赋值
 

@@ -4,7 +4,7 @@ date: 2020-10-1
 categories:
 - web前端
 tags:
-- Javascript
+- javascript
 ---
 
 # 复习

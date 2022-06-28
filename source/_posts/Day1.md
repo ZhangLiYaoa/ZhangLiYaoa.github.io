@@ -4,7 +4,8 @@ date: 2020-9-18
 categories:
 - web前端
 tags:
-- Javascript
+- javascript
+
 ---
  ## 函数声明方式
  
