@@ -4,7 +4,7 @@ date: 2020-9-29
 categories:
 - web前端
 tags:
-- javascript
+- Javascript
 ---
 
 # JSON方法

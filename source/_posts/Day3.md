@@ -4,7 +4,7 @@ date: 2020-9-20
 categories:
 - web前端
 tags:
-- javascript
+- Javascript
 ---
 
 # 数组方法总结

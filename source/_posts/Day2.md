@@ -4,7 +4,7 @@ date: 2020-9-19
 categories:
 - web前端
 tags:
-- javascript
+- Javascript
 
 ---
 # 数据类型

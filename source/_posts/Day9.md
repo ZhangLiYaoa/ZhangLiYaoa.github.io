@@ -4,7 +4,7 @@ date: 2020-9-26
 categories:
 - web前端
 tags:
-- javascript
+- Javascript
 ---
 
 ## 两数之和
