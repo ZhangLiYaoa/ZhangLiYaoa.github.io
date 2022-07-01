@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>C++高级语言程序设计</title>
+    <url>/2020/10/30/C++%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[<h1 id="C-概述"><a href="#C-概述" class="headerlink" title="C++ 概述"></a>C++ 概述</h1><p>发给对方</p>
+<h2 id="c-的起源和特点"><a href="#c-的起源和特点" class="headerlink" title="c++ 的起源和特点"></a>c++ 的起源和特点</h2><h3 id="c-起源"><a href="#c-起源" class="headerlink" title="c++起源"></a>c++起源</h3><h3 id="c-特点"><a href="#c-特点" class="headerlink" title="c++ 特点"></a>c++ 特点</h3><p>c++语言的特点 </p>
+<p>1）是全面兼容C,并对C的功能作了不少扩充；</p>
+<p>2）是增加了面向对象的机制</p>
+<p>具体表现</p>
+<ul>
+<li><p>C++是C的超集，C++保持与C的兼容，这就是许多C代码不经修改就可以为C所用,用C编写的众多函数库和实用软件可以用于C++中</p>
+</li>
+<li><p>C++是一个更好的C它保持了C的简洁、高效、易于接近汇编语言的特点，对C的功能做了不少的扩充，C++编写的程序更加安全，可读性好，代码结构更加合理。</p>
+</li>
+<li><p>编写的程序质量高，从开发时间、费用到形成的软件的可重用、扩展性、可维护性和可靠性等方面有了很大的提升，使得大中型的程序开发变得更加容易。</p>
+</li>
+<li><p>增加了面向对象机制，几乎支持所有面向对象程序设计特征：<br>1）抽象数据类型<br>2）封装与信息隐蔽<br>3）以继承方式实现程序重用<br>4）以软件重载、运算符重载和虚函数来实现多态性；<br>5）以模板来实现类型的参数化</p>
+<p>C++ 最具意义的特点是支持面向对象的特征（C++既可以面向过程的结构化程序设计，也可以面向对象程序设计）</p>
+<h2 id="C-源程序的构成"><a href="#C-源程序的构成" class="headerlink" title="C++源程序的构成"></a>C++源程序的构成</h2><h3 id="简单的C-程序"><a href="#简单的C-程序" class="headerlink" title="简单的C++程序"></a>简单的C++程序</h3></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// sum.cpp 计算整数之和</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//编译预处理  如果使用&lt;iostream.h&gt;就不需要使用using namespace std 做声明了</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std；<span class="comment">//使用命名空间std  保证对C++标准库的每一个特性都是唯一的不至于发生冲突</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span></span>&#123; <span class="comment">//主函数首部</span></span><br><span class="line">    <span class="keyword">int</span> x,y,sum; <span class="comment">//定义三个整型变量</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Please input two integers:&quot;</span>&lt;&lt;<span class="string">&#x27;\n&#x27;</span>; <span class="comment">//提示用户由键盘输入两个整数</span></span><br><span class="line">    cin&gt;&gt;x; <span class="comment">//从键盘输入变量x的值    </span></span><br><span class="line">    cin&gt;&gt;y; <span class="comment">//从键盘输入变量y的值</span></span><br><span class="line">    sum=x+y; <span class="comment">//将x+y的值赋给整数的和sum </span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;x+y=&quot;</span>&lt;&lt;sum&lt;&lt;endl; <span class="comment">//输出两个整数的和</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 如程序正常结束，向操作系统返回一个值0  </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="C-程序的结构特性"><a href="#C-程序的结构特性" class="headerlink" title="C++ 程序的结构特性"></a>C++ 程序的结构特性</h3><p>一个面向对象的C++程序一般由<strong>类的声明</strong>和<strong>类的使用</strong> 两大部分组成</p>
+<p>面向对象程序 1）类的声明部分 2）类的使用部分（由主函数及有关子函数组成）</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//C++ 程序的结构特性示例</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//编译预处理</span></span></span><br><span class="line"><span class="keyword">using</span> namespaces std; <span class="comment">//使用命令空间 std</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&#123;</span>  <span class="comment">//声明一个类，类名为A</span></span><br><span class="line">    <span class="keyword">int</span> x,y,z; <span class="comment">//声明类A的数据成员</span></span><br><span class="line">    ...</span><br><span class="line">        <span class="built_in">fun</span>()&#123; <span class="comment">//声明A的成员函数 fun </span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span></span>&#123;</span><br><span class="line">    A a;  <span class="comment">//定义类A的一个对象a</span></span><br><span class="line">    ...</span><br><span class="line">    a.<span class="built_in">fun</span>(); <span class="comment">//调用对象a的成员函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先声明类A，然后在主函数中创建了类A的对象a,通过面向对象a发送消息，调用成员函数fun(),完成所需要的操作。</p>
+<h3 id="C-程序的编辑、编译、连接和运行"><a href="#C-程序的编辑、编译、连接和运行" class="headerlink" title="C++程序的编辑、编译、连接和运行"></a>C++程序的编辑、编译、连接和运行</h3><p>开发C++程序的过程通常包括编辑、编译、连接、运行和调试等步骤。</p>
+<blockquote>
+<p> C++ 源程序的扩展名为.cpp</p>
+</blockquote>
+<h2 id="C-在非面向对象方面的的扩充"><a href="#C-在非面向对象方面的的扩充" class="headerlink" title="C++在非面向对象方面的的扩充"></a>C++在非面向对象方面的的扩充</h2><h3 id="C-的行注释"><a href="#C-的行注释" class="headerlink" title="C++的行注释"></a>C++的行注释</h3><p>/* */注释分界符号</p>
+<p>//  该注释从 // 开始到行尾结束。</p>
+<h3 id="C-的输入输出"><a href="#C-的输入输出" class="headerlink" title="C++的输入输出"></a>C++的输入输出</h3><p>c 的输入  输出</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">float</span> f;</span><br><span class="line">...</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,i); <span class="comment">//输入</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%f&quot;</span>,f); <span class="comment">//输出</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>c++的输入输出</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">float</span> f;</span><br><span class="line">...</span><br><span class="line">    cin&gt;&gt;i; <span class="comment">//标准输入流 对象 用于标准输入设备键盘 </span></span><br><span class="line">    cout&lt;&lt;f; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>1）cin 标准输入流对象 “&gt;&gt;” 提取运算符（输入运算符）<br>2）count 标准输出流对象 “&lt;&lt;” 插入运算符（输出运算符）  </p>
+<blockquote>
+<p>cin&gt;&gt;变量<br>表示将从标准输入流对象cin读取数值传从给右方指定的变量，</p>
+<p>cin&gt;&gt;x  表示将从标准输入流对象cin读取数值传从给右方指定的变量，用户从键盘输入的值会自动转换为变量x的类型,并存入变量x内，x必须是就基本数据类型，不能是void。</p>
+</blockquote>
+<p>运算符”&gt;&gt;” 允许用户输入一连串数据<br>cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;  两个数据间用空白符(空格、回车或Tab)分隔</p>
+<blockquote>
+<p>count&lt;&lt;数据  标准的输出流对象，标准的输出设备 指屏幕<br>表示将右方变量的值写到标准输出流cout中，即在屏幕中显示。<br>cont&lt;&lt;y  //变量y的值将显示在屏幕上，y必须是基本数据类型不能是void<br>cout&lt;&lt;a+b&lt;&lt;c; //将a+b的值 和c的值 输出到屏幕上</p>
+</blockquote>
+<p>cin和cont的使用</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span>  <span class="comment">//必须嵌入头文件</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Hello,your name:&quot;</span>&lt;&lt;endl;</span><br><span class="line">    cin&gt;&gt;name;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;My name is &quot;</span> &lt;&lt;name;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>操作符dec、hex、oct的使用 //十进制 十六进制 八进制</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">25</span>;</span><br><span class="line">    cout&lt;&lt;hex&lt;&lt;x&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;dec&lt;&lt;x&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;oct&lt;&lt;x&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;  <span class="comment">//&#x27;\n&#x27;与endl相同</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="灵活的局部变量说明"><a href="#灵活的局部变量说明" class="headerlink" title="灵活的局部变量说明"></a>灵活的局部变量说明</h3><p>c++允许 在代码块的任何地方说明全部变量 而c全局变量声明必须在任何函数之前，局部变量必须集中在可执行语句之前。</p>
+<h3 id="结构、联合和枚举名可直接作为类型名"><a href="#结构、联合和枚举名可直接作为类型名" class="headerlink" title="结构、联合和枚举名可直接作为类型名"></a>结构、联合和枚举名可直接作为类型名</h3><p>在c++中</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Bool done； <span class="comment">//不必在枚举前面冠以关键字enum</span></span><br><span class="line">String str； <span class="comment">//不必在结构前冠以关键字struct</span></span><br></pre></td></tr></table></figure>
+
+<p>在c语言中</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Bool</span>&#123;</span>FALSE,TURE&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">String</span>&#123;</span></span><br><span class="line">    chart*ptr;</span><br><span class="line">    <span class="keyword">int</span> length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="const-修饰符"><a href="#const-修饰符" class="headerlink" title="const 修饰符"></a>const 修饰符</h3><p>1.<br>c语言中使用# define来定义常量 </p>
+<blockquote>
+<p>#define LIMIT 100  </p>
+</blockquote>
+<p>c++ 中用const 来定义常量 （const 定义的整型常量int可以省略）</p>
+<blockquote>
+<p>const int LIMIT= 100; </p>
+</blockquote>
+<p>这个常量LIMIT是有类型的，占用存储单元，有地址，可以用指针指向它，但不能修改它，<br>2.const 与指针一起使用</p>
+<ul>
+<li>指向常量的指针</li>
+<li>常指针</li>
+<li>指向常量的长指针<br>1）指向常量的指针是指一个指向常量的指针变量。</li>
+</ul>
+<p>如</p>
+<blockquote>
+<p>const char * name = “zhang” //声明指向常量的指针</p>
+</blockquote>
+<p>声明一个指针为name的变量，它指向一个字符型常量，初始化name为指向字符串”zhang”（使用const不允许改变指针所指的地址中的常量）</p>
+<blockquote>
+<p>Name[3]=’a’ ❌</p>
+</blockquote>
+<p>2）常指针是指把指针所指的地址，而不是它指向的对象声明为常量<br>如</p>
+<blockquote>
+<p>char * const name = “zhang”   常指针</p>
+</blockquote>
+<p>声明一个名为name的指针变量，该指针是指向字符型数据的常指针。用”zhang”的地址初始化该常指针。</p>
+<p>创建一个常指针，就是创建一个不能移动的固定指针，不能改变指针指向的地址，但是它所指地址中的数据是可以改变的。</p>
+<p>如</p>
+<blockquote>
+<p>Name[3] = ‘a’；  ✔ 可以改变指针所指的数据</p>
+</blockquote>
+<blockquote>
+<p>name=”chen”;   ❌ 不能改变指针所指的地址</p>
+</blockquote>
+<p>3）指向常量的常指针是指这个指针本身不能改变，它所指向的地址中数据也不能改变。要声明一个指向常量的常指针，二者都需要声明const</p>
+<p>如</p>
+<blockquote>
+<p>const char * const name =”zhang”;  指向常量的常指针</p>
+</blockquote>
+<p>声明一个名为name的指针变量，它是一个指向字符型常量的常指针， “zhang”初始化该指针</p>
+<blockquote>
+<p>Name[3] = ‘a’；  ❌ 不能改变指针所指地址中的数据</p>
+</blockquote>
+<blockquote>
+<p>name=”zhang”     ❌ 不能改变指针所指的地址</p>
+</blockquote>
+<pre><code>     常量一旦被建立，在任何程序的任何地方都不能在更改
+     与 #definde定义的常量有所不同，const定义的常量可以有自己的数据类型
+     函数的形参也可以用const说明，用于保证形参在该函数内部不会被改动
+</code></pre>
+<p>希望通过函数 i_Max求出整型数组a[200]的最大值，函数原型</p>
+<p><code>int i_Max&#123;const int * ptr&#125;;</code></p>
+<p>调用的格式可以是</p>
+<p><code>i_Max(a)</code>  </p>
+<p>确保原数组中的数据不被破坏，在函数中对数组元素的操作只许读，不许写。</p>
+<h3 id="函数原型"><a href="#函数原型" class="headerlink" title="函数原型"></a>函数原型</h3><p>在C语言程序中<strong>函数调用的位置</strong>在<strong>函数定义之前</strong>应在 调用之前对所调用的函数作声明</p>
+<p>函数声明的形式 C语言建议采用函数原型</p>
+<p>如 </p>
+<p>在c语言程序中函数原型声明</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iosdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>;    <span class="comment">//函数原型声明</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>               <span class="comment">//主函数</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">int</span> x,y,sum;           <span class="comment">//定义三个整型变量</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;Enter two numbers:\n&quot;</span>);  <span class="comment">//提示用户输入两个数的值</span></span><br><span class="line"> <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);                  <span class="comment">//从键盘输入变量x的值</span></span><br><span class="line"> <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;y);                  <span class="comment">//从键盘输入变量y的值 </span></span><br><span class="line"> sum=<span class="built_in">add</span>(x,y);                    <span class="comment">//调用函数add将得到的值赋给变量sum</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;x+y= % d&quot;</span>,sum);         <span class="comment">//输出两个数的和sum的值</span></span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;                       </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span>  <span class="comment">//int add(); add();  定义add函数，函数值为整型   </span></span></span><br><span class="line"><span class="function"></span>&#123;            </span><br><span class="line">    <span class="keyword">int</span> c;           <span class="comment">//定义一个函数变量</span></span><br><span class="line">    c=a+b;          <span class="comment">//计算两个数的和</span></span><br><span class="line">    <span class="keyword">return</span> c;       <span class="comment">//将c的值返回，通过add带回调用出</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在c++中 <strong>函数调用的位置</strong>在<strong>函数定义之前</strong>必须对所调函数作<strong>原型声明</strong>  以说明函数的<strong>名称</strong>、<strong>参数类型</strong>与<strong>个数</strong>以及<strong>函数返回值的类型</strong>，目的是让C++编译的程序进行检查，以确定调用函数的参数以及返回值类型与事先定义的原型是否相符，以保证程序的正确性。</p>
+<p>如<code>int add(int a,int b);</code> 就是函数add的原型</p>
+<p>函数原型语法形式：</p>
+<blockquote>
+<p>返回值类型 函数名(参数表)；</p>
+</blockquote>
+<p>函数原型</p>
+<ul>
+<li>是一条语句</li>
+<li>必须以分号结束；</li>
+<li>由函数返回值类型、函数名、参数表(包含所有参数及它们的类型，参数之间用逗号分隔)构成</li>
+</ul>
+<p>当一个函数的定义在后,而对它的调用在前时，必须将该<strong>函数原型声明</strong>放在<strong>调用语句</strong>之前；</p>
+<p>当一个函数的定义在前，而对它的调用在后时，一般不需要在单给出它的原型声明了，这是 <strong>函数定义说明</strong>的部分起到了<strong>函数原型声明</strong>的作用</p>
+<p>如  下边代码是相同的</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;  <span class="comment">//函数fun 的原型声明</span></span><br><span class="line">                       <span class="comment">//该原型也可以放在main函数体的语句z=fun(4,6)之前</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">int</span> z;</span><br><span class="line"> z=<span class="built_in">fun</span>(<span class="number">4</span>,<span class="number">6</span>);    <span class="comment">//调用函数</span></span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span>  <span class="comment">//定义函数fun</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;   <span class="comment">//定义函数fun</span></span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">int</span> z;</span><br><span class="line"> z=<span class="built_in">fun</span>(<span class="number">4</span>,<span class="number">6</span>);     <span class="comment">//调用函数fun</span></span><br><span class="line"> retun <span class="number">0</span>;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>1)<code>函数原型的参数表</code>不包含<strong>参数的名字</strong>，只包含<strong>它们的类型</strong></p>
+<p><code>long Area(int ,int )</code>    返回类型为long、有两个整型参数、函数名为Area的函数</p>
+<p>带有参数的同一函数原型可以 写成 <code>long Area(int length,int width)</code></p>
+<p>2)<code>函数定义</code>由<strong>函数说明</strong>和<strong>函数体</strong>两部分构成 </p>
+<p><code>函数说明</code>部分与<code>函数原型</code>基本一样，但<code>函数说明</code>部分中的参数必须给出<code>参数的名字</code>，而且不能包含结尾的分号。</p>
+<p>如</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">Area</span><span class="params">(<span class="keyword">int</span> length;<span class="keyword">int</span> width)</span>  <span class="comment">//函数的说明部分</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">        <span class="keyword">return</span> (width*length)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3)<code>主函数mian</code>不必进行原型说明，被看成一个自动说明原型的函数，是第一个被执行的函数，而且不存在被别的函数调用的问题</p>
+<p>4）<strong>原型说明中</strong>没有指出返回类型的函数(包括主函数main)，c++默认返回值类型<code>int</code></p>
+<p>如</p>
+<blockquote>
+<p>cal(float a, int c);           默认返回类型是int</p>
+</blockquote>
+<blockquote>
+<p>int cal(float a,int c)         指明返回类型int型</p>
+</blockquote>
+<p>标准c++中要求<code>mian</code>函数必须声明为<code>int</code>型，即要求主函数带回一个<strong>整型</strong>函数值。</p>
+<p>c++通常是这样处理的，如果程序正常结束，则在main函数后边加一条语句“<code>return 0；</code>”，向操作系统返回值0，如果函数执行不正常，则返回数值-1。</p>
+<p>5）如果一个函数没有返回值，则必须在函数原型中注明返回值类型<code>void</code>,函数最后就不必有<code>return；</code> 之类的返回语句。<code>void main()</code> 也可编译通过</p>
+<p>6）函数原型未注明参数，c++会假定参数表为空(void)</p>
+<p>如</p>
+<p>在c++中原型说明一样</p>
+<blockquote>
+<p>f();           表示该函数不带任何参数</p>
+</blockquote>
+<blockquote>
+<p>f(void);     表示该函数不带任何参数</p>
+</blockquote>
+<p>在c语言中原型说明不同</p>
+<blockquote>
+<p>f(void);      表示该函数不带任何参数</p>
+</blockquote>
+<blockquote>
+<p>f();             表示该函数的参数信息没有给出，它有可能带有参数</p>
+</blockquote>
+<h3 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h3><p>在函数说明前加关键字<code>inline</code>，该函数就被声明<strong>内联函数</strong>，又称为<strong>内置函数</strong>。</p>
+<p>当出现对该函数调用时，c++编译器使用函数体中的代码插入到调用该函数的语句出，同时用实参取代形参，一遍在程序运行时不在进行函数调用。</p>
+<p>？？？为甚要使用<code>内联函数</code>。</p>
+<p><em>为了消除函数调用时的系统开销，以提高函数运行速度</em></p>
+<p>我们知道</p>
+<p>在函数执行过程中调用函数，系统要将程序当前的一些状态信息存到栈中，同时转到函数的代码处去执行函数体语句，这些参数保存与传递的过程中需要时间和空间的开销，使程序执行效率降低，特别使在程序频繁调用函数时，问题会更加严重。</p>
+<p>如 </p>
+<p>将函数指定为内联函数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">box</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j,<span class="keyword">int</span> k)</span></span>;  <span class="comment">//函数原型</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span> <span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c,v;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">    v=<span class="built_in">box</span>(a,b,c);</span><br><span class="line">    cont&lt;&lt;<span class="string">&quot;a*b*c=&quot;</span>&lt;&lt;v&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">box</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j,<span class="keyword">int</span> k)</span>  <span class="comment">//定义box 为内联函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> i*j*k;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>1)内联函数在第一次被调用之前必须进行完成的定义</p>
+<p>2）内联函数体一般不能有复杂的控制语句。</p>
+<p>3）一般只由规模很小的（1-5）条语句而使用频繁的函数才会定义为内联函数，（会提高运行速度）</p>
+<p>4）c++的内联函数与c中带参宏定义<code>#define</code>有些相似，但不完全相同。</p>
+<p><code>宏定义</code>是在编译前由预编译程序对其处理（做简单的字符转置，不做语法检查，会出现意想不到的错误）</p>
+<p>如</p>
+<p>使用带参宏定义完成乘2的功能</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#defind doub(x) x*2</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>,i&lt;=<span class="number">3</span>;i++)&#123;</span><br><span class="line">   <span class="built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="string">&quot;doubled is&quot;</span>&lt;&lt;doub(i)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;1+2 doubled is &quot;</span>&lt;&lt;doub(<span class="number">1</span>+<span class="number">2</span>)&lt;&lt;<span class="built_in">endl</span>;   <span class="comment">//会被置换  编译为     cout&lt;&lt;&quot;1+2 doubled is&quot;&lt;&lt;1+2*2&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用内联函数完成乘2的功能</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;oistream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">doub</span><span class="params">(<span class="keyword">int</span> x)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;= <span class="number">3</span>;i++)</span><br><span class="line">    cout&lt;&lt;i&lt;&lt;<span class="string">&quot;doubled is&quot;</span>&lt;&lt;<span class="built_in">doub</span>(i)&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;1+2 doubled is &quot;</span>&lt;&lt;<span class="built_in">doub</span>(<span class="number">1</span>+<span class="number">2</span>)&lt;&lt;endl;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">doub</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x*<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>内联函数优于带参宏定义，由内联函数一般不在用宏定义#defind</p>
+<h3 id="带有默认参数的函数"><a href="#带有默认参数的函数" class="headerlink" title="带有默认参数的函数"></a>带有默认参数的函数</h3><p>c++允许实参个数和形参个数不同</p>
+<p>方法：在说明函数原型时(若没有说明函数原型,则应在函数定义时)，为一个或多个形参指定默认值</p>
+<p>如</p>
+<p>一个函数原型说明为：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">spacial</span><span class="params">(<span class="keyword">int</span> x=<span class="number">5</span>;<span class="keyword">float</span> y=<span class="number">5.3</span>)</span></span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>若未指定足够的实参，则编译系统按顺序用函数原型中的形参默认值来弥补所缺的实参。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">spacial</span>(<span class="number">100</span>,<span class="number">78</span>,<span class="number">8</span>) <span class="comment">//x=100;y=78.8</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">spacial</span>(<span class="number">25</span>)     <span class="comment">//相当于special(25,5.3)  结果为x=25,y=5.3</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">spacial</span>()       <span class="comment">//相当于special(5,5.3)  结果为x=5,y=5.3</span></span><br></pre></td></tr></table></figure>
+
+<p>1)在声明函数时，所指定默认值的参数都必须出现在不指定默认值参数的右边。（实参与形参结合是从左至右的顺序进行的。</p>
+<blockquote>
+<p>int fun (int i,int j=5;int k）❌</p>
+</blockquote>
+<blockquote>
+<p>int fun (int i ,int k,int k =5 ✔</p>
+</blockquote>
+<p>2)在<code>函数调用</code>时某个参数省略，则其后边的参数都应省略而不采用默认值，不允许某个参数省略后，在给其后的参数指定参数值。</p>
+<blockquote>
+<p>special(,21.3) ❌</p>
+</blockquote>
+<p>3）如果<code>函数的定义</code>在<code>函数的调用</code>之前，则应在<strong>函数定义</strong>中指定默认值。</p>
+<p> 如果<code>函数的定义</code>在<code>函数的调用</code>之后，则<code>函数调用之前</code>需要有<strong>函数声明</strong>,此时必须在<code>函数声明</code>中给出默认值,在<code>函数定义</code>时就不要给出默认值了(因为如果函数声明和函数定义都给了默认值，可能有的c++编译系统会给出”重复指定默认值”会出现重复定义的)。</p>
+<h3 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h3><p>c语言中，函数名必须时唯一的，不允许出现同名函数。如，当要求编写整型，长整型，双精度的的二次方函数时需要编写三个函数，并且不允许同名，</p>
+<blockquote>
+<p>Isquare(int i);     求整型的二次方</p>
+</blockquote>
+<blockquote>
+<p>Lsquare(long I); 求长整型的二次方</p>
+</blockquote>
+<blockquote>
+<p>Dsquare(double d) 求双精度的二次方</p>
+</blockquote>
+<p>c++中，函数可以<code>重载</code>，只要函数参数的类型不同，或者参数的个数不同或者二者兼有之，两个或者两个以上的函数可以使用相同的函数名。</p>
+<p><strong>函数重载</strong>是两个或者两个以上的函数共用一个函数名，被重载的函数称为<strong>重载函数</strong></p>
+<p>c++中对于上边三个不同求二次方的函数 只需要编写一个共同的函数，但他们的参数类型仍然保留不同。</p>
+<p>如</p>
+<p>参数类型不同的函数重载</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> i*i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">square</span><span class="params">(<span class="keyword">long</span> l)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> l*l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">square</span><span class="params">(<span class="keyword">double</span> d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> d*d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> <span class="keyword">int</span> i=<span class="number">12</span>;</span><br><span class="line"> <span class="keyword">long</span> l = <span class="number">1234</span>;</span><br><span class="line"> <span class="keyword">double</span> d = <span class="number">5.57</span>;</span><br><span class="line"> cout&lt;&lt;i&lt;&lt;<span class="string">&#x27;*&#x27;</span>&lt;&lt;i&lt;&lt;<span class="string">&#x27;=&#x27;</span>&lt;&lt;<span class="built_in">sqare</span>(i)&lt;&lt;endl;   <span class="comment">//12*12 = 144</span></span><br><span class="line"> cout&lt;&lt;l&lt;&lt;<span class="string">&#x27;*&#x27;</span>&lt;&lt;l&lt;&lt;<span class="string">&#x27;=&#x27;</span>&lt;&lt;<span class="built_in">sqare</span>(l)&lt;&lt;endl;   <span class="comment">//1234*1234=1522756 </span></span><br><span class="line"> cout&lt;&lt;d&lt;&lt;<span class="string">&#x27;*&#x27;</span>&lt;&lt;d&lt;&lt;<span class="string">&#x27;=&#x27;</span>&lt;&lt;<span class="built_in">sqare</span>(d)&lt;&lt;endl;    <span class="comment">//5.67*5.67=32.1489</span></span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如 </p>
+<p>两个参数个数不同的函数重载</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mul</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x*y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mul</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x*y*z;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">3</span>,b=<span class="number">4</span>,c=<span class="number">5</span>;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;<span class="string">&#x27;*&#x27;</span>&lt;&lt;b&lt;&lt;<span class="string">&#x27;=&#x27;</span>&lt;&lt;<span class="built_in">mul</span>(a,b)&lt;&lt;endl;  <span class="comment">//3*4=12</span></span><br><span class="line">    cout&lt;&lt;a&lt;&lt;<span class="string">&#x27;*&#x27;</span>&lt;&lt;b&lt;&lt;<span class="string">&#x27;*&#x27;</span>&lt;&lt;c&lt;&lt;<span class="string">&#x27;=&#x27;</span>&lt;&lt;<span class="built_in">mul</span>(a,b,c)&lt;&lt;endl;  <span class="comment">//3*4*5=60</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>1)调用函数重载函数时，<code>函数返回值类型</code>不在参数匹配检查之列，若两个函数的参数个数和类型都相同，而只有返回值类型不同，则不允许重载。</p>
+<p>如</p>
+<blockquote>
+<p>int mul(int x,int y);</p>
+</blockquote>
+<blockquote>
+<p>double mul(int x,int y);</p>
+</blockquote>
+<p>这两个函数的返回值类型不同，但是由于<strong>参数个数</strong>和<strong>类型</strong>完全相同，c++编译系统无法从函数调用形式上判断哪一个函数与之相匹配。</p>
+<p>2）函数的重载与带默认值的函数一起使用时，有可能引起二义性</p>
+<p>如</p>
+<blockquote>
+<p>void Drawcircle(int r = 0,int x = 0,int y = 0);</p>
+</blockquote>
+<blockquote>
+<p>void Drawcircle(int r);</p>
+</blockquote>
+<p>当执行Drawcircle(20);  编译系统无法确定调用哪一个函数。</p>
+<p>3） 在函数调用时，如果实参和形参的类型不相符，c++会自动做出类型转换工作。转换成功，则程序继续执行</p>
+<p>但在这种情况下可能产生不可识别的错误。</p>
+<p>如</p>
+<p>有两个函数的原型如下：</p>
+<blockquote>
+<p>void f_a(int x);</p>
+</blockquote>
+<blockquote>
+<p>void f_a(long x);</p>
+</blockquote>
+<p>虽然满足函数重载的条件，但如果用int c =f_a(5,56)去调用，就会出先不可分辨的错误。</p>
+<h3 id="作用域运算符"><a href="#作用域运算符" class="headerlink" title="作用域运算符 ::"></a>作用域运算符 ::</h3><p>有两个同名变量一个全局的，一个局部的，<code>局部变量</code>在其作用域内有较高的优先权，它将屏蔽全局变量。</p>
+<p>如</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> avar = <span class="number">10</span>;     </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> avar;</span><br><span class="line">    avar = <span class="number">25</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;avar is&quot;</span>&lt;&lt;avar&lt;&lt;endl;     <span class="comment">//输入局部变量的值25  avar is25</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如</p>
+<p>作用域运算符的使用</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> avar;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> avar;</span><br><span class="line">    avar=<span class="number">25</span>;     </span><br><span class="line">    ::avar=<span class="number">10</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;local avar=&quot;</span>&lt;&lt;avar&lt;&lt;endl;  <span class="comment">//local avar=25</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;global avar=&quot;</span>&lt;&lt;::avar&lt;&lt;endl; <span class="comment">//global avar=10</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>作用域运算符</strong>可以解决局部变量与全局变量的重名问题，即在局部变量的作用域内，可用<code>::</code>对被屏蔽的全局变量进行访问。</p>
+<h3 id="无名联合"><a href="#无名联合" class="headerlink" title="无名联合"></a>无名联合</h3><p>在c语言中，声明联合（共同体）的类型一般为：</p>
+<blockquote>
+<p>union 联合类型名</p>
+<p>{</p>
+<p>成员列表</p>
+<p>}</p>
+</blockquote>
+<p>定义联合变量的形式</p>
+<blockquote>
+<p>联合类型名 联合变量名：</p>
+</blockquote>
+<p>如</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">data</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">double</span> d;</span><br><span class="line">&#125;a,b,c;</span><br></pre></td></tr></table></figure>
+
+<p><code>无名联合</code>是c++中的一种特殊联合，它在关键字<code>union</code>后边没有给出联合名，它可使一组数据成员共享同一<strong>内存地址</strong></p>
+<p>如</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">double</span> d;   </span><br><span class="line">&#125;x;</span><br></pre></td></tr></table></figure>
+
+<p>无名联合变量x中的整型成员i，双精度型d具有相同的存储地址。<br>在访问无名变量时，不能访问无名联合变量,而应访问联合变量中的成员。</p>
+<p>如</p>
+<blockquote>
+<p>x.i    访问无名联合变量x中的整型成员i</p>
+</blockquote>
+<blockquote>
+<p>x.d   访问无名联合变量x中的双精度成员d</p>
+</blockquote>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p>在c语言表达式中不同类型的数据会自动转换类型</p>
+<p>如</p>
+<p>把一个整型转换为双精度型(double) </p>
+<blockquote>
+<p>int  i = 10;</p>
+<p>double x = (double) i;</p>
+</blockquote>
+<p>c++支持这样的格式，还可以写成</p>
+<blockquote>
+<p>int i = 20;</p>
+<p>double x = double(i);    推荐使用这种</p>
+</blockquote>
+<h3 id="运算符new-和-delete"><a href="#运算符new-和-delete" class="headerlink" title="运算符new 和 delete"></a>运算符new 和 delete</h3><p>c语言中使用函数malloc 和free<strong>动态分配内存</strong>和<strong>释放动态分配的内存</strong>，</p>
+<p>c++中使用运算符<code>new</code>和<code>delect</code>更好的，更简单的进行内存的分配和释放</p>
+<p>运算符<code>new</code>使用内存分配的基本形式:</p>
+<p>指针变量名 = new 类型；</p>
+<p><em>在程序运行过程中，运算符<code>new</code>从称为堆的一块自由存储区中为程序分配一块与类型字节数相适应的存储空间，并将该块内存的首地址存于指针的变量中。</em></p>
+<p>如</p>
+<blockquote>
+<p>int * p;  定义一个整型指针 变量p</p>
+</blockquote>
+<blockquote>
+<p>p = new int；new动态分配存放一个整数的内存空间，并将其首地址赋给指针变量p</p>
+</blockquote>
+<p>运算符<code>delete</code> 用于释放运算符<code>new</code>分配的存储空间。基本形式为</p>
+<blockquote>
+<p>delete 指针变量名；</p>
+</blockquote>
+<p>其中，指针变量保存着<code>new</code>分配的内存的首地址。</p>
+<p>如</p>
+<blockquote>
+<p>delete p;   将new动态分配的存储空间释放(其首地址已存放在指针变量p中)</p>
+</blockquote>
+<p>使用new和delete的例子</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *ptr;   <span class="comment">//定义一个整型的指针变量int</span></span><br><span class="line">    ptr=<span class="keyword">new</span> <span class="keyword">int</span>; <span class="comment">//动态分配一个整型的存储空间，并将首地址赋给ptr</span></span><br><span class="line">    *ptr = <span class="number">10</span>;  </span><br><span class="line">    cout&lt;&lt;*ptr;   <span class="comment">//运行结果为10</span></span><br><span class="line">    <span class="keyword">delete</span> ptr;   <span class="comment">//释放指针ptr指向的存储空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>该程序定义了一个整型指针变量ptr，用new分配了一块存放一个整型的内存空间，并将首地址赋给指针变量ptr，然后在这内存块中赋予初值10，并将其打印出，最后释放ptr指向的内存空间。</p>
+<p>优点：</p>
+<p>1）使用<code>malloc</code>函数时必须使用sizeof函数来计算所需要的字节数，而<code>new</code>可以根据数据类型自动计算所要分配内存的大小，减少错误发生的可能性。</p>
+<p>2）<code>new</code>能够自动返回正确的指针类型，不用向<code>malloc</code>函数那样，必须在程序中进行强制类型转换，才能使其返回正确的指针类型。</p>
+<ul>
+<li>使用<code>new</code>可以为数组动态分配内存空间，需要在类型名后面加上<code>数组大小</code></li>
+</ul>
+<p>如 </p>
+<blockquote>
+<p>int*pi = new int[10];</p>
+</blockquote>
+<p>这时new 为具有10个数组元素的整型数组分配了内存空间，并将其首地址赋给了指针pi</p>
+<p>使用new 为多维数组分配内存空间时，必须提供所有维的大小。</p>
+<p>如</p>
+<blockquote>
+<p>int * pi = new int [2] [3] [4]</p>
+</blockquote>
+<p>其中，第一维的界值可以是任意合法的正整数表达式</p>
+<p>如</p>
+<blockquote>
+<p>int i = 3;</p>
+<p>int *pi = new [2] [3] [4];</p>
+</blockquote>
+<ul>
+<li>new 可以为简单变量分配内存的同时，进行初始化。基本形式</li>
+</ul>
+<blockquote>
+<p>指针变量名 = new 类型(初值)</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="keyword">int</span> *p;</span><br><span class="line"> p = <span class="keyword">new</span> <span class="built_in"><span class="keyword">int</span></span>(<span class="number">99</span>);  <span class="comment">//动态分配内存空间，并将99作为初始值赋给它</span></span><br><span class="line"> cout&lt;&lt;*p;</span><br><span class="line"> <span class="keyword">delete</span> p;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是new不能对动态分配的<code>数组存储区</code>进行初始化。</p>
+<ul>
+<li>释放动态分配的数组存储区时，可以使用<code>delete</code>格式</li>
+</ul>
+<blockquote>
+<p>delete [ ]指针变量名</p>
+</blockquote>
+<p>在此指针变量名前只用<code>一对</code>方括号符，无需指出所删除数组的维数和大小。</p>
+<ul>
+<li>使用new动态分配地址时，如果没有足够的内存满足分配要求，则动态分配失败，有些编译系统将返回空指针<code>NULL</code>,可以对内存的动态分配是否成功进行检验。</li>
+</ul>
+<p>对动态分配是否成功进行检查</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="keyword">int</span> *p;</span><br><span class="line"> p = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line"> <span class="keyword">if</span>(!p)</span><br><span class="line"> &#123;</span><br><span class="line">     cout&lt;&lt;<span class="string">&quot;allocation failure\n&quot;</span>;   <span class="comment">//若分配失败，屏幕上将会出现allocation failure </span></span><br><span class="line">     <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> *p =<span class="number">20</span>;</span><br><span class="line"> cout&lt;&lt; *p;</span><br><span class="line"> <span class="keyword">delete</span> p;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>内存动态分配成功后不宜变动指针的值，否则释放存储空间时会引起系统内存管理失败。</p>
+<ul>
+<li>用new分配的存储存储空间不会自动释放，只能同过delete释放，要适时的释放动态分配的存储空间。</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ol>
+<li>引用的概念<br>作用是为变量另起一个名字，<code>变量的引用</code>通常被认为是变量的别名。<br>当声明了一个引用时，必须同时对另一个变量的名字来将它进行初始化。即<em>声明它代表哪一个变量</em>,是哪一个变量的别名。(对一个引用的所有操作都是在对其所代表的变量的操作)。</li>
+</ol>
+<p>  格式如下</p>
+<blockquote>
+<p>类型 &amp;引用名=已定义的变量名；</p>
+</blockquote>
+  <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;j = i; <span class="comment">//声明j是一整型变量的引用，用整型变量i对其进行初始化</span></span><br></pre></td></tr></table></figure>
+
+<p>  j是一个整型变量的引用，用整型变量i对其进行初始化，这是j就是变量i的引用，即是变量i的别名。</p>
+<p>  <code>&amp;</code> 是<strong>引用声明符</strong>，此时它不代表地址。</p>
+<p>  对变量声明一个引用，并不另外开辟内存单元，变量i和引用j占用内存的同一位置。</p>
+<p>  变量和引用的关系</p>
+  <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="keyword">int</span> i;</span><br><span class="line"> <span class="keyword">int</span> &amp;j=i;           <span class="comment">//声明j是一个整型变量i的地址</span></span><br><span class="line"> i=<span class="number">30</span>; </span><br><span class="line"> cout&lt;&lt;<span class="string">&quot;i=&quot;</span>&lt;&lt;i&lt;&lt;<span class="string">&quot;j=&quot;</span>&lt;&lt;j&lt;&lt;<span class="string">&quot;\n&quot;</span>;  <span class="comment">//输出变量i和引用的值  i=30j=30</span></span><br><span class="line"> j=<span class="number">80</span>;</span><br><span class="line"> cout&lt;&lt;<span class="string">&quot;i=&quot;</span>&lt;&lt;i&lt;&lt;<span class="string">&quot;j=&quot;</span>&lt;&lt;j&lt;&lt;<span class="string">&quot;\n&quot;</span>; <span class="comment">//输出变量i和引用的值   i=80j=80</span></span><br><span class="line"> cout&lt;&lt;<span class="string">&quot;变量i的地址:&quot;</span>&lt;&lt;&amp;i&lt;&lt;<span class="string">&quot;\n&quot;</span>; <span class="comment">//输出变量i的地址  变量i的地址:0x61fe14</span></span><br><span class="line"> cout&lt;&lt;<span class="string">&quot;引用j的地址:&quot;</span>&lt;&lt;&amp;j&lt;&lt;<span class="string">&quot;\n&quot;</span>; <span class="comment">//输出变量j的地址 引用j的地址:0x61fe14  此地址会根据实际运行有所不同</span></span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  1）<code>引用名</code>可以使用任何合法的变量名，除了用作函数的参数或返回类型外，在声明引用时，必须立即对它进行初始化，不能声明完成后在赋值</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">int</span> &amp;j;       <span class="comment">//❌没有指定j代表那个变量</span></span><br><span class="line">j=i;       </span><br></pre></td></tr></table></figure>
+
+<p>2）为<code>引用</code>提供的初始值可以是一个<strong>变量</strong>或者<code>另一个引用</code></p>
+<p>如</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i =<span class="number">5</span>; <span class="comment">//定义一个整型变量i</span></span><br><span class="line"><span class="keyword">int</span> &amp;j1=i; <span class="comment">//声明j1是整型变量i的引用(别名)</span></span><br><span class="line"><span class="keyword">int</span> &amp;<span class="number">2</span>=j1; <span class="comment">//声明j2是整型变量j1的引用(别名)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>变量i有两个别名j1和j2</p>
+<p>3)指针是通过地址间接访问某个变量，而<code>引用</code>是通过别名直接访问某个变量。</p>
+<p>每次使用引用时，可以不用书写<code>间接运算符&quot;*&quot;</code>，引用可以简化程序</p>
+<p>比较引用和指针使用的方法</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i= <span class="number">15</span>;    <span class="comment">//定义一个整型变量i,赋初值15</span></span><br><span class="line">    <span class="keyword">int</span> *iptr=&amp;i;  <span class="comment">//定义指针变量iptr，将变量i的地址赋给iptr</span></span><br><span class="line">    <span class="keyword">int</span> &amp;rptr=i;    <span class="comment">//声明变量i的引用rptr，rptr是变量i的别名</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;i is &quot;</span>&lt;&lt;i&lt;&lt;endl;   <span class="comment">//输出i的值     </span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;* iptr is &quot;</span>&lt;&lt;*iptr&lt;&lt;endl; <span class="comment">//输出*iptr的值</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;rptr is &quot;</span>&lt;&lt;rptr&lt;&lt;endl; <span class="comment">//输出rptr的值</span></span><br><span class="line">    i=<span class="number">29</span>;   </span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;After changing i to 29:&quot;</span>&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;i is &quot;</span>&lt;&lt;i&lt;&lt;endl;  <span class="comment">//输出i的值 </span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;* iptr is &quot;</span>&lt;&lt;*iptr&lt;&lt;endl;  <span class="comment">//输出*iptr的值</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;rptr is &quot;</span>&lt;&lt;rptr&lt;&lt;endl;  <span class="comment">//输出rptr的值</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>指针变量</code>iptr所指的变量i，必须用<code>*</code>来间接引用指针</p>
+<p>使用<code>引用</code>rptr所代表的变量i，不用写间接引用运算符</p>
+<p>4）<code>引用</code>在初始化后不能在被重新声明为另一个变量的引用（别名）</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i,k;   <span class="comment">//定影一个整型变量k</span></span><br><span class="line"><span class="keyword">int</span> &amp;j=i;   <span class="comment">//声明j是整型变量i的引用(别名)</span></span><br><span class="line">j=&amp;k;   <span class="comment">// ❌ 企图重新声明j的整型变量k的引用(别名)</span></span><br></pre></td></tr></table></figure>
+
+<p>5）并不是所有类型的数据都可以<code>引用</code>,</p>
+<ul>
+<li>不允许建立<code>void</code>的类型引用 </li>
+</ul>
+<blockquote>
+<p>void &amp;r = 10;     ❌</p>
+</blockquote>
+<p>void 只是在语法上相当于一个类型，本质上不是类型，void的含义是<code>无类型或空类型</code>，任何实际存在的变量都属于非void类型。</p>
+<ul>
+<li>不能建立<code>引用</code>的数组</li>
+</ul>
+<blockquote>
+<p>int a [4] = “abcd”;</p>
+<p>int   &amp;ra[4] = a；      ❌ 不能建立引用数组</p>
+</blockquote>
+<ul>
+<li><p>不能建立引用的引用，不能建立指向指针的引用。引用本身不是一种数据类型，所以没有引用的引用，也没有引用的指针。</p>
+<blockquote>
+<p>int n = 3;     </p>
+<p>int &amp;&amp;r = n;  ❌ 不能建立引用的引用</p>
+<p>int &amp;*p = n;   ❌ 不能建立指向引用的指针</p>
+</blockquote>
+<p>6)可以将一个引用的地址赋给一个指针，此时指针指向的是原来的变量</p>
+<blockquote>
+<p>int num = 50;</p>
+<p>int &amp;ref = num;</p>
+<p>int  *p = &ref;</p>
+</blockquote>
+</li>
+</ul>
+<p>p中保存的是原来变量num的地址。</p>
+<p>7)引用运算符和地址操作符使用相同的符号<code>&amp;</code>，<code>引用</code>仅在声明时带有引用运算符<code>&amp;</code>,以后就像普通变量一样使用，不能再带有<code>&amp;</code>,，其他场合使用的<code>&amp;</code>都是地址操作符。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> j = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> &amp;i = j;   <span class="comment">//声明引用i，&quot;&amp;&quot;为引用运算符</span></span><br><span class="line">i =<span class="number">123</span>;       <span class="comment">//使用引用i,不带引用运算符</span></span><br><span class="line"><span class="keyword">int</span> *pi = &amp;i;  <span class="comment">//这里的 &amp;为地址操作符</span></span><br><span class="line">cout&lt;&lt;&amp;pi;   <span class="comment">// 这里的也为地址操作符</span></span><br></pre></td></tr></table></figure>
+
+<p>2.引用作为函数参数</p>
+<p>引用的主要用途是将<code>引用</code>作为函数的参数</p>
+<p>指针变量作为函数参数的例子</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> * m,<span class="keyword">int</span> * n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    temp = * m;</span><br><span class="line">    * m = * n;</span><br><span class="line">    * n = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a =<span class="number">5</span>,b =<span class="number">10</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;a=&quot;</span>&lt;&lt;a&lt;&lt;<span class="string">&quot; b=&quot;</span>&lt;&lt;b&lt;&lt;endl;  <span class="comment">//a=5 b=10</span></span><br><span class="line">    <span class="built_in">swap</span>(&amp;a,&amp;b);</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;a=&quot;</span>&lt;&lt;a&lt;&lt;<span class="string">&quot; b=&quot;</span>&lt;&lt;b&lt;&lt;endl;  <span class="comment">//a=10 b=5</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>采用指针变量作为函数参数，调用函数swap后a和b的值被交换了</p>
+<p>引用作为函数的参数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp;m,<span class="keyword">int</span> &amp;n)</span>  <span class="comment">//形参m和n是整型变量的引用</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    temp = m;</span><br><span class="line">    m = n;</span><br><span class="line">    n = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>,b =<span class="number">10</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;a= &quot;</span>&lt;&lt;a&lt;&lt;<span class="string">&quot;b=&quot;</span>&lt;&lt;b&lt;&lt;endl;   <span class="comment">//a= 5 b=10</span></span><br><span class="line">    <span class="built_in">swap</span>(a,b);   <span class="comment">//实参a和b是整型变量,可以通过引用来修改实参a和b的值</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;a= &quot;</span>&lt;&lt;a&lt;&lt;<span class="string">&quot;b= &quot;</span>&lt;&lt;b&lt;&lt;endl;  <span class="comment">//a= 10 b= 5</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当程序中调用swap时参数a和b分别初始化引用m和n，m、n分别是变量a、b的别名，对m、n的访问就是对a、b的访问，函数swap调用后引用m、n的值被交换了，所以a、b的值也被交换了。c++主张采用引用作为函数的参数。</p>
+<p>3.使用引用返回函数值</p>
+<p>引用返回函数值这种方法，可以将该函数调用放在赋值运算符的左边。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp;<span class="title">index</span><span class="params">(<span class="keyword">int</span>)</span></span>;              <span class="comment">//声明函数返回一个整型的引用</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">index</span>(<span class="number">2</span>)= <span class="number">25</span>;             <span class="comment">//将函数调用放在赋值运算符的左边 等价于a[2]赋值为25</span></span><br><span class="line">    cout&lt;&lt;<span class="built_in">index</span>(<span class="number">2</span>);           <span class="comment">//等价于输出数组元素a[2]的值    运行结果为25</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp;<span class="title">index</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a[i];              <span class="comment">//定义函数返回一个整数类型的引用，等价于返回数组元素a[i]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>除了将函数定义为返回<code>引用</code>外，通常一个函数不能直接用在<code>赋值运算符的左边</code></p>
+<p>如</p>
+<p>将上例中，index定义成</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">index</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> a[i];    </span><br><span class="line">&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<p>编译时语句 <code>index(a)=25</code>出错，而语句<code>cout&lt;&lt;index(2)</code>可以通过为什么❓</p>
+<p>4.引用举例</p>
+<p>应用引用的综合例子</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp;<span class="title">max</span><span class="params">(<span class="keyword">int</span> &amp;num1,<span class="keyword">int</span> &amp;num2)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp;<span class="title">min</span><span class="params">(<span class="keyword">int</span> &amp;num1,<span class="keyword">int</span> &amp;num2)</span></span>; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num1,num2;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;请输入第1个数:&quot;</span>;                    <span class="comment">//请输入第1个数</span></span><br><span class="line">    cin&gt;&gt;num1;                                <span class="comment">//45</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;请输入第2个数:&quot;</span>;                   <span class="comment">//请输入第2个数</span></span><br><span class="line">    cin&gt;&gt;num2;                               <span class="comment">//78</span></span><br><span class="line">    <span class="built_in">max</span>(num1,num2) = <span class="number">0</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;\n找出最大数,然后把最大数赋值为0后,两个数分别为:&quot;</span>&lt;&lt;endl;    <span class="comment">//找出最大数，然后把最大值赋值给0后,两个数分别为：</span></span><br><span class="line">    cout&lt;&lt;num1&lt;&lt;<span class="string">&quot;和&quot;</span>&lt;&lt;num2&lt;&lt;endl;   <span class="comment">//45 和 0</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;现在，请在输入两个数:&quot;</span>&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;请输入第一个数:&quot;</span>&lt;&lt;endl;        <span class="comment">//请输入第1个数</span></span><br><span class="line">    cin&gt;&gt;num1;                           <span class="comment">//13</span></span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;请输入第2个数:&quot;</span>&lt;&lt;endl;         <span class="comment">//请输入第2个数</span></span><br><span class="line">    cin&gt;&gt;num2;                            <span class="comment">//56</span></span><br><span class="line">    <span class="built_in">min</span>(num1,num2) =<span class="number">0</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;\n找出最小数，然后把最小数赋值给0,两个数分别为:&quot;</span>&lt;&lt;endl;  <span class="comment">//找出最小数，然后把最大值赋值给0后,两个数分别为：</span></span><br><span class="line">    cout&lt;&lt;numl&lt;&lt;<span class="string">&quot;和&quot;</span>&lt;&lt;num2&lt;&lt;endl;   <span class="comment">// 0和56</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp;<span class="title">max</span><span class="params">(<span class="keyword">int</span> &amp;num1,<span class="keyword">int</span> &amp;num2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (num1&gt;num2)?num1:num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> &amp;<span class="title">min</span><span class="params">(<span class="keyword">int</span> &amp;num1,<span class="keyword">int</span> &amp;num2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (num1&lt;num2)?num1:num2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有使用<code>引用返回值</code>功能,就需要把max(num1,num2)和min(num1,num2) = 0</p>
+<p>扩展成if_else语句，就必须先找出最大数然后，把最大数赋值给0，找出最小值也类似。</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day10:知识点记录</title>
+    <url>/2020/09/27/Day10/</url>
+    <content><![CDATA[<h1 id="1-清除定时器"><a href="#1-清除定时器" class="headerlink" title="1. 清除定时器"></a>1. 清除定时器</h1><p>就这？不是哟，我其实表达的是批量清除定时器，一般我们会在定时器调用的时候将它赋值给一个变量，然后将在需要清除定时器的时候使用 clearTimeout 或者 clearInterval 就可以清除定时器了。那么如果你想批量清除定时器又该如何清除呢？<br>其实很简单，小伙伴们在控制台打印一下使用 setTimeout 或者 setInterval 的返回值可能就知道改怎么做了。啥？你没 get 到，好吧，让我细细道来。<br>每个定时器调用的时候都会返回一个数字值 id，这个 id 值是递增的，每次你调用定时器后，id 值都会加一，如果后面你想清除全局的定制器，你可以再设一个定制器，用它的返回值来个 for 循环即可，代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clearAllTimer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timer = <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;&#125;);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= timer; i++) &#123;</span><br><span class="line">    <span class="built_in">clearInterval</span>(i);</span><br><span class="line">    <span class="built_in">clearTimeout</span>(i);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">如果你只想清除特定范围或者特定的几个定时器的话，</span><br><span class="line">可以将它们的值传到一个数组里面去，再进行一个 for 循环即可</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注：谷歌浏览器的定时器返回数值ID以1为起，</span><br><span class="line">fireFox要在原定时器的序位的基础上加1，我试了一下，起始值确实是2。</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-获取当前月份的最后一天"><a href="#2-获取当前月份的最后一天" class="headerlink" title="2.获取当前月份的最后一天"></a>2.获取当前月份的最后一天</h1><p>乍一看，好像挺简单的。但是一般的小伙伴都是一看就会，一用就废，认真想一下感觉好像实现起来有点难，其实就一行代码，挺简单的。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function getFirstDay(year, month) &#123;</span><br><span class="line">  return new Date(year, month, 0).getDate()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-获取变量的数据类型"><a href="#3-获取变量的数据类型" class="headerlink" title="3.获取变量的数据类型"></a>3.获取变量的数据类型</h1><p>如何获取变量的数据类型？很常见的问题了，很多同学都会遇到，有挺多靠谱和不靠谱的回答，在这里我找了一种比较靠谱的回答，源码看下面：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getType</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(val).replace(<span class="regexp">/^\[object (.+)\]$/</span>, <span class="string">&quot;$1&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-calc-的使用"><a href="#4-calc-的使用" class="headerlink" title="4. calc 的使用"></a>4. calc 的使用</h1><p>calc 是一个 css3 新增的功能，可以用来指定元素的长度，动态计算长度值。写个小案例如下。以下只是小试牛刀，后面你需要自行百度 calc 的具体使用。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">       </span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">      </span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span></span><br><span class="line">      </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">      </span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"> </span></span><br><span class="line"><span class="css">       <span class="selector-class">.parent</span> &#123;  </span></span><br><span class="line"><span class="css">          <span class="attribute">width</span>: <span class="number">200px</span>; </span></span><br><span class="line"><span class="css">          <span class="attribute">height</span>: <span class="number">200px</span>;  </span></span><br><span class="line"><span class="css">          <span class="attribute">background-color</span>: lightblue;   </span></span><br><span class="line"><span class="css">       &#125;  </span></span><br><span class="line"><span class="css">        <span class="selector-class">.son</span> &#123;     </span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">20px</span>);     </span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">20px</span>);     </span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: lightpink;  </span></span><br><span class="line"><span class="css">          &#125;  </span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;parent&quot;</span>&gt;</span>    </span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注：calc在使用的时候需要注意它的运算符，</span><br><span class="line">- 和 + 在使用的时候前后都必须要有空格，* 和 / 倒是没有这个要求</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day1:知识点记录</title>
+    <url>/2020/09/18/Day1/</url>
+    <content><![CDATA[<h2 id="函数声明方式"><a href="#函数声明方式" class="headerlink" title="函数声明方式"></a>函数声明方式</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 函数声明方式1：直接声明方式</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a + b + c);</span><br><span class="line">    &#125;</span><br><span class="line">    func1(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);<span class="comment">//9</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 函数定义方式二：函数表达式</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> func2 = <span class="function"><span class="keyword">function</span> (<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a + b + c);</span><br><span class="line">    &#125;;</span><br><span class="line">    func2(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);<span class="comment">//6</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 函数定义三：通过构造函数方式</span></span><br><span class="line"><span class="comment">     * var 变量名 = new Function(&#x27;形参1&#x27;,&#x27;形参2&#x27;....,&#x27;函数体&#x27;);</span></span><br><span class="line"><span class="comment">     * 注意:参数可以有多个</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">var</span> func3 = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;console.log(a+b+c)&#x27;</span>);</span><br><span class="line">    func3(<span class="number">2</span>, <span class="number">23</span>, <span class="number">2</span>);<span class="comment">//27</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="babel-的作用"><a href="#babel-的作用" class="headerlink" title="babel 的作用"></a>babel 的作用</h2><ul>
+<li>第一种 比如你写了个箭头函数，但是ie不支持，babel就能够把你的箭头函数转化成 function</li>
+<li>第二种 polyfill (corejs)</li>
+</ul>
+<h2 id="动态类型转换"><a href="#动态类型转换" class="headerlink" title="动态类型转换"></a>动态类型转换</h2><p>Boolean类型</p>
+<ul>
+<li>“0” 转成 boolean是 true</li>
+<li>0转成boolean是false</li>
+</ul>
+<p> js中的循环 </p>
+<ul>
+<li>for;forEach;map; while;for in ;for of</li>
+</ul>
+<h2 id="逗号表达式"><a href="#逗号表达式" class="headerlink" title="逗号表达式"></a>逗号表达式</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = (a, <span class="number">1</span>); <span class="comment">// 1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> b = (a, <span class="number">1</span>) ;<span class="comment">// b = 1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="算法题-删除排序数组中的重复项"><a href="#算法题-删除排序数组中的重复项" class="headerlink" title="算法题 删除排序数组中的重复项"></a>算法题 删除排序数组中的重复项</h1><ul>
+<li>遍历移除法  array.splice(index,howmamg)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day13:知识点记录</title>
+    <url>/2020/10/01/Day13/</url>
+    <content><![CDATA[<h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><h2 id="javascript-简介"><a href="#javascript-简介" class="headerlink" title="javascript 简介"></a>javascript 简介</h2><p>不同的引擎</p>
+<p> v8 : Chrome 和Opera中的Javascript 引擎</p>
+<p>SpiderMonkey: Firefox中的javascript引擎</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">引擎是如何工作</span><br><span class="line">引擎很复杂，但是基本原理很简单</span><br><span class="line">1.引擎(通过嵌入在浏览器中)读取(&quot;解析&quot;)脚本</span><br><span class="line">2.然后将脚本转化为&quot;编译&quot;的机器语言</span><br><span class="line">3.然后这机器语言代码块快速地运行</span><br><span class="line">引擎会对流程中的每个阶段都进行优化。它甚至可以在运行时监视编译的脚本，分析数据流并根据这些进一步优化机器代码</span><br></pre></td></tr></table></figure>
+
+<h4 id="浏览器的同源策略："><a href="#浏览器的同源策略：" class="headerlink" title="浏览器的同源策略："></a>浏览器的同源策略：</h4><p>域名、协议、端口号相同  </p>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day11:知识点记录</title>
+    <url>/2020/09/28/Day11/</url>
+    <content><![CDATA[<p>格式化日期</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatDate</span>(<span class="params">date: <span class="built_in">Date</span>, pattern: string</span>): <span class="title">string</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">let</span> month:number|string = data.getMonth()+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> day:number|string = data.getDay();</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;data.getFullYear()&#125;</span>-<span class="subst">$&#123;month&#125;</span>-<span class="subst">$&#123;day&#125;</span> <span class="subst">$&#123;data.getHours()&#125;</span>:<span class="subst">$&#123;data.getMinutes()&#125;</span>:<span class="subst">$&#123;data.getSeconds()&#125;</span>`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatDate</span>(<span class="params">date: <span class="built_in">Date</span>, pattern: string = <span class="string">&quot;yyyy年MM月dd日&quot;</span></span>): <span class="title">string</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">let</span> nDate = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> date === <span class="string">&#x27;string&#x27;</span> || <span class="keyword">typeof</span> date === <span class="string">&#x27;number&#x27;</span>)&#123;</span><br><span class="line">     nData = <span class="keyword">new</span> <span class="built_in">Date</span>(+date)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      nDate = date</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> o = &#123;</span><br><span class="line">    <span class="string">&#x27;M+&#x27;</span>: nDate.getMonth() + <span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;d+&#x27;</span>: nDate.getDate(),</span><br><span class="line">    <span class="string">&#x27;h+&#x27;</span>: nDate.getHours(),</span><br><span class="line">    <span class="string">&#x27;m+&#x27;</span>: nDate.getMinutes(),</span><br><span class="line">    <span class="string">&#x27;s+&#x27;</span>: nDate.getSeconds(),</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(pattern)) &#123;</span><br><span class="line">    pattern = pattern.replace(</span><br><span class="line">      <span class="built_in">RegExp</span>.$1,</span><br><span class="line">      (nDate.getFullYear() + <span class="string">&#x27;&#x27;</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$1.length)</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">const</span> k <span class="keyword">in</span> o)&#123;</span><br><span class="line">   <span class="keyword">if</span>(<span class="keyword">new</span> <span class="function"><span class="title">RegExp</span>(<span class="params"><span class="string">`(<span class="subst">$&#123;k&#125;</span>`</span></span>)</span>.test(pattern))&#123;</span><br><span class="line">     cosnt str =  o[k] +<span class="string">&#x27;&#x27;</span></span><br><span class="line">     frm = frm.replace(</span><br><span class="line">        <span class="built_in">RegExp</span>.$1,</span><br><span class="line">         <span class="built_in">RegExp</span>.$1.length === <span class="number">1</span> ? str: ((<span class="string">&#x27;00&#x27;</span>+str).substr(str.length))</span><br><span class="line">     )</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">  <span class="keyword">return</span> pattern</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(formatDate(<span class="number">1601364446000</span>,<span class="string">&quot;yyyy年MM月dd日&quot;</span>))</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day12:知识点记录</title>
+    <url>/2020/09/29/Day12/</url>
+    <content><![CDATA[<h1 id="JSON方法"><a href="#JSON方法" class="headerlink" title="JSON方法"></a>JSON方法</h1><p> JSON.stringify()可以应用于原始数据(primitive)类型</p>
+<p>JSON支持以下数据类型</p>
+<ul>
+<li>Objects()</li>
+<li>Arrays()</li>
+<li>strings</li>
+<li>numbers</li>
+<li>boolean</li>
+<li>null</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">JSON是语言无关的纯数据规范,因此一些特定于JavaScript的对象属性会被JSON.stringify跳过。</span><br><span class="line">- 函数属性(方法)</span><br><span class="line">- Symbol类型的属性</span><br><span class="line">- 存储undefined的属性。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>JSON.stringify() 不得有循环引用</p>
+</blockquote>
+<p>包装对象？<br>将对象转换为JSON再转换回</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;John Smith&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">35</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sJion = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(user))</span><br><span class="line"><span class="built_in">console</span>.log(sJion)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>示例:排除反向引用</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> room = &#123;</span><br><span class="line">  <span class="attr">number</span>:<span class="number">23</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> meetup = &#123;</span><br><span class="line">  <span class="attr">title</span>:<span class="string">&quot;conference&quot;</span>,</span><br><span class="line">  <span class="attr">occupiedBy</span>:[&#123;<span class="attr">name</span>:<span class="string">&quot;John&quot;</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">&quot;John&quot;</span>&#125;],</span><br><span class="line">  <span class="attr">place</span>:room</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//循环引用</span></span><br><span class="line">room.occupiedBy = meetup,</span><br><span class="line">meetuo.self = meetup</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> o = <span class="built_in">JSON</span>.stringify(meetup,<span class="function"><span class="keyword">function</span> <span class="title">replacer</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">return</span> (key != <span class="number">0</span> &amp;&amp; value == meetup)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>算法<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 123 456 789</span></span><br><span class="line">  <span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">maxrix</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;maxrix.length;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> j =i;j&lt;maxrix.length;j++)&#123;</span><br><span class="line">        <span class="keyword">let</span> temp = maxrix[i][j]     </span><br><span class="line">        maxrix[i][j] = maxrix[j][i]  </span><br><span class="line">        maxrix[j][i] = temp</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//交换得到  147 258 693</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//每个数组倒序排列  // 741 852 963</span></span><br><span class="line">    <span class="keyword">return</span> maxrix.map(<span class="function"><span class="params">item</span> =&gt;</span> item.reverse())</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">第一个参数  第二个参顺</span><br><span class="line">回忽略值</span><br><span class="line">三个参数值   </span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day2:知识点记录</title>
+    <url>/2020/09/19/Day2/</url>
+    <content><![CDATA[<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">原始类型和对象之间的关键区别：</span><br><span class="line">一个原始值:</span><br><span class="line">- 是原始类型中的一种</span><br><span class="line">- javascript 有7种原始类型：string、number、bigint、boolean、symbol、null和undefined</span><br><span class="line">一个对象：</span><br><span class="line">- 能够存储多个值作为属性。</span><br><span class="line">- 可以使用大括号 &#123;&#125; 创建对象，例如：&#123;name: &quot;John&quot;, age: 30&#125;。</span><br><span class="line">  JavaScript 中还有其他种类的对象，例如函数就是对象。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数字(number)有两种类型:</span><br><span class="line">- javaScript 中的常规数字以 64 位的格式 IEEE-754 存储，也被称为“双精度浮点数”。</span><br><span class="line">这是我们大多数时候所使用的数字</span><br><span class="line">- bigInt 数字，用于表示任意长度的整数。有时会需要它们，</span><br><span class="line">因为常规数字不能超过 253 或小于 -253。由于仅在少数特殊领域才会用到 BigInt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>方法 num.toString(base) 返回在给定 base 进制数字系统中 num 的字符串表示形式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">注意:</span><br><span class="line"> 123456..toString(36) 中的两个点不是打错了。</span><br><span class="line">如果我们想直接在一个数字上调用一个方法，</span><br><span class="line">比如上面例子中的 toString，那么我们需要在它后面放置两个点 ..。</span><br><span class="line"></span><br><span class="line">如果我们放置一个点：123456.toString(36)，那么就会出现一个 error，</span><br><span class="line">因为 JavaScript 语法隐含了第一个点之后的部分为小数部分。</span><br><span class="line">如果我们再放一个点，那么 JavaScript 就知道小数部分为空，现在使用该方法。</span><br><span class="line"></span><br><span class="line">也可以写成 (123456).toString(36)。</span><br></pre></td></tr></table></figure>
+
+<h4 id="数值类型提供的操作"><a href="#数值类型提供的操作" class="headerlink" title="数值类型提供的操作"></a>数值类型提供的操作</h4><ul>
+<li>Math.floor<br>向下舍入：3.1 变成 3，-1.1 变成 -2。</li>
+<li>Math.ceil<br>向上舍入：3.1 变成 4，-1.1 变成 -1。</li>
+<li>Math.round<br>向最近的整数舍入：3.1 变成 3，3.6 变成 4，-1.1 变成 -1。</li>
+<li>Math.trunc（IE 浏览器不支持这个方法）<br>移除小数点后的所有内容而没有舍入：3.1 变成 3，-1.1 变成 -1。</li>
+<li>str.tofixed() 方法<br>会将数值舍入后转成字符串 所以可以可以使用Number()调用或者将其转换为数值 + num.tofixed(5)</li>
+</ul>
+<h3 id="买卖股票的最佳时机-II"><a href="#买卖股票的最佳时机-II" class="headerlink" title="# 买卖股票的最佳时机 II"></a># 买卖股票的最佳时机 II</h3><p>给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</p>
+<p>注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p>示例一：</p>
+<p>输入：[7,1,5,3,6,4]</p>
+<p>输出：5</p>
+<p>解释：再第二天（股票价格 = 1）的时候买入，在第5天（股票价格 = 6）的时候卖出，最大利润 = 6-1=5</p>
+<p>注意利润不能是7-1 = 6，因为卖出的价格需要大于买入的价格，同时，你不能在买入前卖出股票。</p>
+<p>示例二：</p>
+<p>输入：[7,6,4,3,1]</p>
+<p>输出：0</p>
+<p>时间复杂度：O(N)</p>
+<p>空间复杂度：O(1)</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> maxProfit = <span class="function"><span class="keyword">function</span>(<span class="params">prices</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> money = <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> buy = prices[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> price <span class="keyword">of</span> prices)&#123;</span><br><span class="line">        <span class="keyword">if</span>(price &gt; buy)&#123;</span><br><span class="line">            money += price - buy</span><br><span class="line">        &#125;</span><br><span class="line">        buy = price</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> money </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day3:知识点记录</title>
+    <url>/2020/09/20/Day3/</url>
+    <content><![CDATA[<h1 id="数组方法总结"><a href="#数组方法总结" class="headerlink" title="数组方法总结"></a>数组方法总结</h1><p>数组方法备忘单：</p>
+<ul>
+<li>添加/删除元素：<ul>
+<li><code>push(...items)</code> —— 向尾端添加元素，</li>
+<li><code>pop()</code> —— 从尾端提取一个元素，</li>
+<li><code>shift()</code> —— 从首端提取一个元素，</li>
+<li><code>unshift(...items)</code> —— 向首端添加元素，</li>
+<li><code>splice(pos, deleteCount, ...items)</code> —— 从 <code>index</code> 开始删除 <code>deleteCount</code> 个元素，并在当前位置插入 <code>items</code>。</li>
+<li><code>slice(start, end)</code> —— 创建一个新数组，将从位置 <code>start</code> 到位置 <code>end</code>（但不包括 <code>end</code>）的元素复制进去。</li>
+<li><code>concat(...items)</code> —— 返回一个新数组：复制当前数组的所有元素，并向其中添加 <code>items</code>。如果 <code>items</code> 中的任意一项是一个数组，那么就取其元素。</li>
+</ul>
+</li>
+<li>搜索元素：<ul>
+<li><code>indexOf/lastIndexOf(item, pos)</code> —— 从位置 <code>pos</code> 开始搜索 <code>item</code>，搜索到则返回该项的索引，否则返回 <code>-1</code>。</li>
+<li><code>includes(value)</code> —— 如果数组有 <code>value</code>，则返回 <code>true</code>，否则返回 <code>false</code>。</li>
+<li><code>find/filter(func)</code> —— 通过 <code>func</code> 过滤元素，返回使 <code>func</code> 返回 <code>true</code> 的第一个值/所有值。</li>
+<li><code>findIndex</code> 和 <code>find</code> 类似，但返回索引而不是值。</li>
+</ul>
+</li>
+<li>遍历元素：<ul>
+<li><code>forEach(func)</code> —— 对每个元素都调用 <code>func</code>，不返回任何内容。</li>
+</ul>
+</li>
+<li>转换数组：<ul>
+<li><code>map(func)</code> —— 根据对每个元素调用 <code>func</code> 的结果创建一个新数组。</li>
+<li><code>sort(func)</code> —— 对数组进行原位（in-place）排序，然后返回它。</li>
+<li><code>reverse()</code> —— 原位（in-place）反转数组，然后返回它。</li>
+<li><code>split/join</code> —— 将字符串转换为数组并返回。</li>
+<li><code>reduce(func, initial)</code> —— 通过对每个元素调用 <code>func</code> 计算数组上的单个值，并在调用之间传递中间结果。</li>
+</ul>
+</li>
+<li>其他：<ul>
+<li><code>Array.isArray(arr)</code> 检查 <code>arr</code> 是否是一个数组。</li>
+</ul>
+</li>
+</ul>
+<p>请注意，<code>sort</code>，<code>reverse</code> 和 <code>splice</code> 方法修改的是数组本身。</p>
+<p>这些是最常用的方法，它们覆盖 99％ 的用例。但是还有其他几个：</p>
+<ul>
+<li><p><a href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Array/some">arr.some(fn)</a>/<a href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Array/every">arr.every(fn)</a> 检查数组。</p>
+<p>与 <code>map</code> 类似，对数组的每个元素调用函数 <code>fn</code>。如果任何/所有结果为 <code>true</code>，则返回 <code>true</code>，否则返回 <code>false</code>。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Array/fill">arr.fill(value, start, end)</a> —— 从索引 <code>start</code> 到 <code>end</code>，用重复的 <code>value</code> 填充数组。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin">arr.copyWithin(target, start, end)</a> —— 将从位置 <code>start</code> 到 <code>end</code> 的所有元素复制到 <strong>自身</strong> 的 <code>target</code> 位置（覆盖现有元素）。</p>
+</li>
+</ul>
+<h1 id="算法-189-旋转数组"><a href="#算法-189-旋转数组" class="headerlink" title="算法 189 旋转数组"></a>算法 189 旋转数组</h1><h1 id="旋转数组"><a href="#旋转数组" class="headerlink" title="旋转数组"></a>旋转数组</h1><p>定一个数组，将数组中的元素向右移动 <em>k</em> 个位置，其中 <em>k</em> 是非负数。</p>
+<p>示例1：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">输入: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>] 和 k = <span class="number">3</span></span><br><span class="line">输出: [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">解释:</span><br><span class="line">向右旋转 <span class="number">1</span> 步: [<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">向右旋转 <span class="number">2</span> 步: [<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">向右旋转 <span class="number">3</span> 步: [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>要求使用空间复杂度为 O(1) 的 <strong>原地</strong> 算法。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">rotate</span>(<span class="params">nums:number:[],k:number</span>):<span class="title">void</span></span>&#123;</span><br><span class="line">     <span class="keyword">let</span> len = nums.length  <span class="comment">//获取数组长度</span></span><br><span class="line">     k = k % len  </span><br><span class="line">     <span class="keyword">let</span> start = len - k</span><br><span class="line">     reverse(nums,<span class="number">0</span>,start - <span class="number">1</span>);</span><br><span class="line">     reverse(nums,<span class="number">0</span>,start,len - <span class="number">1</span>)</span><br><span class="line">     reverse(nums，<span class="number">0</span>，len - <span class="number">1</span>)  </span><br><span class="line"> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">nums:number[],i:number,j:number</span>):<span class="title">void</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">        [nums[i],num[j]] = [num[j],num[i]]</span><br><span class="line">        i++;</span><br><span class="line">        j--；</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day4:知识点记录</title>
+    <url>/2020/09/21/Day4/</url>
+    <content><![CDATA[<ul>
+<li>for of 的原理？</li>
+<li>Iterable object 迭代器如何实现，怎么写的？</li>
+<li>字面量为什么循环不了？</li>
+<li>0.1+0.2   为什么会有不等于0.3,怎么解决这个问题？</li>
+<li>字符串为啥是不变得？</li>
+<li>双精度64位?</li>
+</ul>
+<h1 id="Map-and-Set-映射和集合"><a href="#Map-and-Set-映射和集合" class="headerlink" title="Map and Set(映射和集合)"></a>Map and Set(映射和集合)</h1><h2 id="Map-类似数组"><a href="#Map-类似数组" class="headerlink" title="Map   类似数组"></a>Map   类似数组</h2><p>Map 是一个带键的数据项的集合，就像一个 Object 一样。 但是它们最大的差别是 Map 允许任何类型的键（key）。</p>
+<p>属性和方法</p>
+<ul>
+<li>new Map()  创建map</li>
+<li>map.set(key,value) 根据键存储值</li>
+<li>map.get(key) 根据键来返回值，如果map中不存在对应的key,则返回undefined。</li>
+<li>map.has(key) 如果key存在返回true，否则返回false。</li>
+<li>map.delete(key) 删除指定键的值</li>
+<li>map.clear(key) 清空map</li>
+<li>map.size 返回当前元素的个数</li>
+</ul>
+<blockquote>
+<p>Map和对象不同，Map键不会转换为字符串,键可以是任何类型<br>Map 可以将对象作为键</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Map 是怎么比较键的？</span><br><span class="line">Map 使用SameValueZero 算法来比较键是否相等,它和严格相等 === 差不多，区别是NaN被看成是等于NaN,所以NaN也可以作为键</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Map-的迭代"><a href="#Map-的迭代" class="headerlink" title="Map 的迭代"></a>Map 的迭代</h3><p>如果要在Map里使用循环，可以使用三个方法:</p>
+<ul>
+<li>map.keys() 遍历并返回所有的键值</li>
+<li>map.value() 遍历并返回所有的值</li>
+<li>map.entries()遍历并返回所有的实体 [key,value] ,for…of 在默认情况下使用的就是这个。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> recipeMap = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">  [<span class="string">&#x27;cucumber&#x27;</span>,<span class="number">500</span>],[<span class="string">&#x27;tomatoes&#x27;</span>,<span class="number">350</span>],[<span class="string">&#x27;onion&#x27;</span>,<span class="number">50</span>]</span><br><span class="line">])</span><br><span class="line"><span class="comment">//遍历多有的实体[key,value]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> entry <span class="keyword">of</span> recipeMap)&#123; <span class="comment">//recipeMap.entries()相同</span></span><br><span class="line">   <span class="built_in">console</span>.log(entry); <span class="comment">//[&quot;cucumber&quot;, 500] [&quot;tomatoes&quot;, 350][&quot;onion&quot;, 50]</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="普通对象如何创建一个Map-使用Object-entries"><a href="#普通对象如何创建一个Map-使用Object-entries" class="headerlink" title="普通对象如何创建一个Map  使用Object.entries()"></a>普通对象如何创建一个Map  使用Object.entries()</h4><p>如果我们想要从一个已有的普通对象来创建一个Map,我们可以使用内建方法Object.entries(obj),该返回对象的键/值对数组。</p>
+<p>从一个对象创建一个Map:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&#x27;zhang&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>:<span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>(<span class="built_in">Object</span>.entries(obj));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(map.set(<span class="string">&#x27;name&#x27;</span>)) <span class="comment">//zhang</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这里，Object.entries 返回键/值对数组：[ [“name”,”zhang”], [“age”, 30] ]。这就是 Map 所需要的格式。</p>
+<h4 id="从Map创建对象-使用Object-fromEntries"><a href="#从Map创建对象-使用Object-fromEntries" class="headerlink" title="从Map创建对象  使用Object.fromEntries()"></a>从Map创建对象  使用Object.fromEntries()</h4><p>Object.entries() 给定一个具有[key,value] 键值对的数组，它会根据给定的数组创建一个对象</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> prices = <span class="built_in">Object</span>.fromEntries([  <span class="comment">//从Map得到一个普通对象</span></span><br><span class="line">  [<span class="string">&#x27;banana&#x27;</span>,<span class="number">1</span>],</span><br><span class="line">  [<span class="string">&#x27;orange&#x27;</span>,<span class="number">2</span>],</span><br><span class="line">  [<span class="string">&#x27;meat&#x27;</span>,<span class="number">3</span>],</span><br><span class="line">])  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在 &#123;banana: 1, orange: 2, meat: 3&#125;</span></span><br><span class="line"></span><br><span class="line"> <span class="built_in">console</span>.log(prices.orange) <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>Set 是一个特殊类型的集合  “值”的集合(没有键)，它的每一个值只能出现一个</p>
+<p>方法如下:</p>
+<ul>
+<li>new Set(iterable) 创建一个set,如果提供了一个interable对象 (通常是数组) ，将会从数组里面复制值到set中。</li>
+<li>set.add(value) 添加一个值,返回set本身   重复调用一个值只会出现一次</li>
+<li>set.delete(value) 删除值如果 value 在这个方法调用的时候存在则返回 true ，否则返回 false。</li>
+<li>set.has(value) 如果value在set中,返回true,否则返回false</li>
+<li>set.clear() 清空set</li>
+<li>set.size 返回数组长度</li>
+</ul>
+<h4 id="Set迭代-iteration"><a href="#Set迭代-iteration" class="headerlink" title="Set迭代(iteration)"></a>Set迭代(iteration)</h4><p>我们可以使用for..of 或者forEach 来遍历Set</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">&quot;oranges&quot;</span>,<span class="string">&quot;apples&quot;</span>,<span class="string">&quot;bananas&quot;</span>])</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> set) <span class="built_in">console</span>.log(value)</span><br><span class="line">set.forEach(<span class="function">(<span class="params">value,set</span>) =&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value)</span><br><span class="line">  <span class="built_in">console</span>.log(set)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Map 中用于迭代的方法在 Set中也同样支持.<br>在Map和Set中迭代总是按照值插入的顺序进行的,所以我们不能说这些集合是无序的,但是我们不能对元素进行重新排序.也不能直接按其标号来获取元素.</p>
+</blockquote>
+<p> 例子</p>
+<h5 id="过滤数组中的唯一元素"><a href="#过滤数组中的唯一元素" class="headerlink" title="过滤数组中的唯一元素"></a>过滤数组中的唯一元素</h5><p>定义一个数组arr<br>创建一个函数unique(arr),该函数返回一个由arr中所有元素所组成的数组</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr))  <span class="comment">// return [...new Set(arr)]</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> values = [<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;D&quot;</span>,<span class="string">&quot;B&quot;</span>]</span><br><span class="line"></span><br><span class="line">alert(unique(values))  <span class="comment">//Hare,Krishna,:-O</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="对象包装器"><a href="#对象包装器" class="headerlink" title="对象包装器"></a>对象包装器</h1><h1 id="217-存在重复元素-数组去重-比较长度"><a href="#217-存在重复元素-数组去重-比较长度" class="headerlink" title="217 存在重复元素(数组去重,比较长度)"></a>217 存在重复元素(数组去重,比较长度)</h1><p>给定一个重复数组,判断是否出现重复元素。</p>
+<ul>
+<li>如果任意一值在数组中出现至少两次,函数返回true</li>
+<li>如果数组中每个元素都不相同,则返回false</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法一</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">containsDuplicata</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> nums.some(<span class="function">(<span class="params">el,index</span>) =&gt;</span>nums.indexOf(el) !== index)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> containsDuplicata = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(nums)</span><br><span class="line">  <span class="keyword">return</span> set.size !== nums.length </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法三</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">containsDuplicata</span>(<span class="params">nums:<span class="built_in">number</span>[]</span>):<span class="title">boolean</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [...new <span class="built_in">Set</span>(nums)].length !== nums.length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day5:知识点记录</title>
+    <url>/2020/09/22/Day5/</url>
+    <content><![CDATA[<h1 id="136-只出现一次的数字-位运算的妙用"><a href="#136-只出现一次的数字-位运算的妙用" class="headerlink" title="136 只出现一次的数字(位运算的妙用)"></a>136 只出现一次的数字(位运算的妙用)</h1><p>给定一个非空整数数组，<br>除了某个元素只出现一次以外，<br>其余每个元素均出现两次。<br>找出那个只出现了一次的元素。</p>
+<ul>
+<li>具有线性时间复杂度，最好不会使用额外空间</li>
+</ul>
+<p>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: [4,1,2,1,2]</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li> n ^ n == 0 ; n ^ 0 = n; </li>
+<li>遵循交换律</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">4</span> ^ <span class="number">1</span> ^ <span class="number">2</span> ^ <span class="number">1</span> ^ <span class="number">2</span></span><br><span class="line"><span class="number">1</span> ^ <span class="number">1</span> ^ <span class="number">2</span> ^ <span class="number">2</span> ^ <span class="number">4</span>   <span class="comment">//交换律</span></span><br><span class="line">    <span class="number">0</span> ^ <span class="number">2</span> ^ <span class="number">2</span> ^ <span class="number">4</span></span><br><span class="line">       <span class="number">2</span> ^ <span class="number">2</span> ^ <span class="number">4</span></span><br><span class="line">           <span class="number">0</span> ^ <span class="number">4</span>     <span class="comment">//==4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> singleNumber = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">let</span> result = nums[<span class="number">0</span>]  <span class="comment">//获取数组的第一位</span></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">       result = result ^ nums[i]  <span class="comment">//异或运算</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> result</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>weakMap和weakSet 用来解决什么问题？Map和Set 有什么区别</p>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day7:知识点记录</title>
+    <url>/2020/09/24/Day7/</url>
+    <content><![CDATA[<h1 id="结构赋值"><a href="#结构赋值" class="headerlink" title="结构赋值"></a>结构赋值</h1><p>可以立即将一个对象或者数组映射到多个变量上。</p>
+<h2 id="数组结构优雅写法"><a href="#数组结构优雅写法" class="headerlink" title="数组结构优雅写法"></a>数组结构优雅写法</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> [firstName,surName] = <span class="string">&quot;lily Kantor&quot;</span>.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(firstName,surName) <span class="comment">//lily Kantor</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;lily Kantor&quot;</span>.split(<span class="string">&#x27; &#x27;</span>)) <span class="comment">//[&quot;lily&quot;, &quot;Kantor&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组的结构"><a href="#数组的结构" class="headerlink" title="数组的结构"></a>数组的结构</h2><ul>
+<li>将结构中的各个元素复制到变量中达到结构的目的,<code>数组本身并没有被修改</code></li>
+<li>对于不想要的元素,可以通过<code>逗号</code>来把它丢弃</li>
+<li>可以是任何迭代的对象，不仅仅是数组。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> [a,b,c] = <span class="string">&quot;abc&quot;</span>    <span class="comment">//[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span></span><br><span class="line"><span class="keyword">let</span> [one,two,three] = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="built_in">console</span>.log([one,two,three])  <span class="comment">//[1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以赋值给等号左侧的任何内容</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">[user.name,user.surName] = <span class="string">&quot;lily Kantor&quot;</span>.split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(user.name) <span class="comment">//lily</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>与entries() 方法进行循环操作</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;Join&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>:<span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//循环遍历键值 (同样适用于Map)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> [key, value] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(user)) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;key&#125;</span>:<span class="subst">$&#123;value&#125;</span>`</span>); <span class="comment">// name:John, then age:30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>交换变量的值(技巧)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> guest = <span class="string">&quot;jane&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> admin = <span class="string">&quot;Pete&quot;</span>;</span><br><span class="line"></span><br><span class="line">[guest, admin] = [admin, guest];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;guest&#125;</span> <span class="subst">$&#123;admin&#125;</span>`</span>) <span class="comment">//Pete jane</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h3><p>…</p>
+<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><p>默认值可以是复杂的表达式,也可以是函数调用</p>
+<h2 id="对象的结构"><a href="#对象的结构" class="headerlink" title="对象的结构"></a>对象的结构</h2><ul>
+<li>如果使用已有的变量,而不是用let ,我们需要用括号() ,<br>把它括起来,否则js会将主代码流当作一个代码块,进行语句分组。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> salaries = &#123;</span><br><span class="line">  <span class="string">&quot;Join&quot;</span>:<span class="number">100</span>,</span><br><span class="line">  <span class="string">&quot;Pete&quot;</span>:<span class="number">200</span>,</span><br><span class="line">  <span class="string">&quot;Mary&quot;</span>:<span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">topSarays</span>(<span class="params">salaries</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> max = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> maxName = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> [key,value] <span class="keyword">of</span> <span class="built_in">Object</span>.entries(salaries))&#123;</span><br><span class="line">    <span class="keyword">if</span>(max &lt; value)&#123;</span><br><span class="line">      max = value</span><br><span class="line">      maxName = key</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxName</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">topSarays(&#123;&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="算法题-加一"><a href="#算法题-加一" class="headerlink" title="算法题 加一"></a>算法题 加一</h1><ul>
+<li>给定一个由整数组成的非空数组所表示的非负整数,在该数的基础上加一。</li>
+<li>最高位数字存放在数组的首位，数组中每个元素只存储单个数字。</li>
+<li>你可以假设除了整数0之外,这个整数不会以零开头。</li>
+</ul>
+<p>示例一 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入:[1,2,3]</span><br><span class="line">输出:[1,2,4]</span><br><span class="line">解释：输入数组表示数字123。</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">digits</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> plusOne = <span class="function">(<span class="params">digits</span>) =&gt;</span> &#123;  </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = digits[i].length;i &gt;= <span class="number">0</span>;i--)&#123;</span><br><span class="line">      <span class="keyword">if</span>(digits[i] !== <span class="number">9</span>)&#123;</span><br><span class="line">        digits[i]++;</span><br><span class="line">        <span class="keyword">return</span> digits[i]</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        digits[i] = <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">const</span> result = [<span class="number">1</span>,...digits]</span><br><span class="line">     <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day6:知识点记录</title>
+    <url>/2020/09/23/Day6/</url>
+    <content><![CDATA[<h1 id="Object-keys、Object-values、Object-entries"><a href="#Object-keys、Object-values、Object-entries" class="headerlink" title="Object.keys、Object.values、Object.entries"></a>Object.keys、Object.values、Object.entries</h1><h1 id="普通函数和Map-有什么区别"><a href="#普通函数和Map-有什么区别" class="headerlink" title="普通函数和Map 有什么区别"></a>普通函数和Map 有什么区别</h1><p>调用语法 和返回值的不同<br>1)<br>Map 调用语法 <code>map.keys()</code><br>Object 调用语法是 <code>Object.keys(obj)</code>，而不是obj.keys()<br>2)<br>Map的返回值是<code>可迭代项</code><br>Object 的返回值是<code>&quot;真正的数组&quot;</code><br>Why?<br>其一：</p>
+<blockquote>
+<p>因为灵活性,在javascript中,对象是所有复杂结构的基础。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">比如我们有一个自己创建的对象data,并可以实现它自己的data.values()方法,同时我们依然可以调用Object.values(data)方法</span><br></pre></td></tr></table></figure>
+<p>其二：</p>
+<blockquote>
+<p>Object.* 返回的是真正的数组对象，而不是迭代项,这主要是历史原因</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;join&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>:<span class="number">30</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(user))  <span class="comment">//[&quot;name&quot;,&quot;age&quot;]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.values(user)) <span class="comment">//[&quot;join&quot;,30]</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.entries(user)) <span class="comment">//[[&quot;name&quot;:&quot;join&quot;],[&quot;age&quot;:30]]</span></span><br></pre></td></tr></table></figure>
+
+<p>使用<code>Object.values</code>来遍历属性的值</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;join&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>:<span class="number">30</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> <span class="built_in">Object</span>.values(user))&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value) <span class="comment">// join,then 30</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<p> Object.keys/values/entries 会忽略 symbol 属性<br> 就像 for..in 循环一样，这些方法会忽略使用 Symbol(…) 作为键的属性。</p>
+</blockquote>
+</blockquote>
+<p>   通常这很方便。但是，如果我们也想要 Symbol 类型的键，那么这儿有一个单独的方法 Object.getOwnPropertySymbols，它会返回一个只包含 Symbol 类型的键的数组。另外，还有一种方法 Reflect.ownKeys(obj)，它会返回 所有 键。</p>
+<h3 id="转换对象"><a href="#转换对象" class="headerlink" title="转换对象"></a>转换对象</h3><p>因为对象缺少数组的方法比如map、filter。所以我们需要使用<br>Object.entries() ，然后再使用Object.fromEntries()</p>
+<ul>
+<li>使用Object.entries(obj) ,从中获取obj的键/值对组成的数组。</li>
+<li>对该数组适应数组的方法,比如map</li>
+<li>对结果数组使用Object.fromEntries(array)方法,将结果转换为对象。</li>
+</ul>
+<p>一个带有价格的对象,进行加倍</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> prices = &#123;</span><br><span class="line">  <span class="attr">banana</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">orange</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">meat</span>: <span class="number">4</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> doublePrices = <span class="built_in">Object</span>.fromEntries(</span><br><span class="line">  <span class="comment">// 转换为数组，之后使用 map 方法，然后通过 fromEntries 再转回到对象</span></span><br><span class="line">  <span class="built_in">Object</span>.entries(prices).map(<span class="function">(<span class="params">[key, value]</span>) =&gt;</span> [key, value * <span class="number">2</span>])</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(doublePrices.meat); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="exercise"><a href="#exercise" class="headerlink" title="exercise"></a>exercise</h4><p>属性求和</p>
+<p>有一个带有任意数量薪水的 salaries 对象。</p>
+<p>编写函数 sumSalaries(salaries)，该函数使用 Object.values 和 for..of 循环返回所有薪水的总和。</p>
+<p>如果 salaries 是空对象，那么结果必须是 0。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line"> <span class="keyword">let</span> salaries = &#123;</span><br><span class="line">     <span class="string">&quot;John&quot;</span>:<span class="number">100</span>,</span><br><span class="line">     <span class="string">&quot;Pete&quot;</span>:<span class="number">200</span>,</span><br><span class="line">     <span class="string">&quot;Mary&quot;</span>:<span class="number">300</span>,</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//方案一</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sunSararies</span>(<span class="params">salaries</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> <span class="built_in">Object</span>.values(salaries))&#123;</span><br><span class="line">    num += value</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> num;  <span class="comment">//600</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方案二</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sunSararies</span>(<span class="params">salaries</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.values(salaries).reduce(<span class="function">(<span class="params">sum,item</span>) =&gt;</span> sum+item,<span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sunSararies(salaries)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>计算属性数量</p>
+<p>计算一个函数count(obj),该函数返回对象中属性数量的数量:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&#x27;zhang&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>:<span class="number">30</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span>(<span class="params">user</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.keys(user).length</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">count(user)  <span class="comment">//2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>对象: 通过键来存储数据项的单个实体<br>数组：将数据收集到一个有序的集合中</p>
+<h1 id="350-两个数组的交集-II-indexOf检查是否另一个数组存在，哈希表记录元素出现的个数、序列优化循环"><a href="#350-两个数组的交集-II-indexOf检查是否另一个数组存在，哈希表记录元素出现的个数、序列优化循环" class="headerlink" title="350 两个数组的交集 II  (indexOf检查是否另一个数组存在，哈希表记录元素出现的个数、序列优化循环)"></a>350 两个数组的交集 II  (indexOf检查是否另一个数组存在，哈希表记录元素出现的个数、序列优化循环)</h1><ul>
+<li>indexOf 检查是否在另一个数组中存在<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">遍历其中一个数组nums1,在另一个数组nums2 中是否存在该元素</span><br><span class="line">- 存在放入到结果中，并在nums2中删除</span><br><span class="line">- 不存在则不做任何操作</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法一</span></span><br><span class="line"><span class="keyword">const</span> intersect = <span class="function">(<span class="params">nums1,nums2</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> _result = [] <span class="comment">//定义一个空数组</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i&lt;nums1.length;i++&gt;)&#123;</span><br><span class="line">    <span class="keyword">let</span> j =  nums2.indexOf(nums1[i])  <span class="comment">//判断当前元素是否在nums2中出现 ,如果出现用j进行过存储索引</span></span><br><span class="line">   <span class="comment">//如果不出现为-1</span></span><br><span class="line">   <span class="keyword">if</span>(j &gt;= <span class="number">0</span> )&#123;  <span class="comment">//如果大于等于0证明出现了进行push</span></span><br><span class="line">      _result.push(nums1[i]) </span><br><span class="line">      nums2.splice(j,<span class="number">1</span>)  <span class="comment">//删除nums2 中的数据 避免重复</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> _result</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">intersect</span>(<span class="params">nums1:number[],nums2:number[]</span>):<span class="title">number</span>[]</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> nums1.filter(<span class="function"><span class="params">el</span> =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">const</span> index = nums2.indexOf(el)</span><br><span class="line">     <span class="keyword">if</span>(index &gt; -<span class="number">1</span>) nums2 = [...nums2.slice(<span class="number">0</span>,index),...nums.slice(index + <span class="number">1</span>)]</span><br><span class="line">     <span class="keyword">return</span> index &gt; -<span class="number">1</span>;</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day8:知识点记录</title>
+    <url>/2020/09/25/Day8/</url>
+    <content><![CDATA[<h1 id="日期和时间"><a href="#日期和时间" class="headerlink" title="日期和时间"></a>日期和时间</h1><p>283 移动零</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> moveZeroes = <span class="function">(<span class="params">nums</span>) =&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">let</span> j = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>;i&lt;nums.length;i++&gt;)&#123;</span><br><span class="line">     <span class="keyword">if</span>(nums[i]!== <span class="number">0</span>)&#123;</span><br><span class="line">       nums[j] = nums[i];</span><br><span class="line">       j++;</span><br><span class="line">     &#125;<span class="comment">//非零元素处理</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span>(i=j;i&lt;nums.length;i++&gt;)&#123;</span><br><span class="line">     nums[i] = <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">我们通过时间戳来创建日期</span><br><span class="line">并且可以使用data.getTime() 将现有的<span class="built_in">Date</span>对象转换为时间戳</span><br><span class="line"></span><br><span class="line">&gt;<span class="number">01</span><span class="number">.01</span><span class="number">.1970</span>之前的日期带有负的时间戳  <span class="keyword">new</span> <span class="built_in">Date</span>(-<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">- 如果只有一个参数,并且是字符串,那么他会被自动解析。</span><br><span class="line">- 使用当前时区中给定的组件创建日期，只有前两个参数是必须的</span><br><span class="line">- 时间度量精确到<span class="number">1</span>毫秒(<span class="number">1</span>/<span class="number">1000</span>秒)</span><br><span class="line"></span><br><span class="line">## 访问日期组件</span><br><span class="line"> 从 <span class="built_in">Date</span> 对象中访问年、月等信息有多种方式：</span><br><span class="line">- getFullYear() 获取年份(<span class="number">4</span>位数)</span><br><span class="line">- getMonth() 获取月份,从<span class="number">0</span>到<span class="number">11</span></span><br><span class="line">- getDate() 获取当月的具体日期，从<span class="number">1</span>到<span class="number">31</span></span><br><span class="line">- getHours()</span><br><span class="line">- getMinutes()</span><br><span class="line">- getSeconds()</span><br><span class="line">- getMilliseconds()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- getDay() 获取一周中的第几天</span><br><span class="line"></span><br><span class="line">​<span class="string">``</span><span class="string">`txt</span></span><br><span class="line"><span class="string">UTC(协调世界时) UTC时区知名之一，比如UTC(协调世界时)提前0个小时,它被用作标准时间。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>getTime() 返回日期的时间戳 从1970-1-1 00:00:00 UTC+0开始到现在所经过的毫秒数</p>
+</li>
+<li><p>getTimezoneOffset() 返回  UTC与本地时区之间的时差,以分钟为单位。</p>
+</li>
+</ul>
+<h2 id="设置日期组件"><a href="#设置日期组件" class="headerlink" title="设置日期组件"></a>设置日期组件</h2><ul>
+<li>setFullYear() </li>
+<li>setMouth()</li>
+<li>setDate()</li>
+<li>setHours()</li>
+<li>setMinutes()</li>
+<li>setSeconds()</li>
+<li>setMilliseconds()</li>
+<li>setTime() 使用自1970-01-01 00:00:00 UTC+0以来的毫秒数来设置整个日期</li>
+</ul>
+<h2 id="日期转化为数字-日期差值"><a href="#日期转化为数字-日期差值" class="headerlink" title="日期转化为数字,日期差值"></a>日期转化为数字,日期差值</h2><blockquote>
+<p>日期可以相减,相减的结果是以毫秒为单位时间差。这个作用可用于时间测量。</p>
+</blockquote>
+<h3 id="Date-now"><a href="#Date-now" class="headerlink" title="Date.now()"></a>Date.now()</h3><p>测量时间间隔</p>
+<p>返回当前的时间戳 相当于new Date().getTime()<br>许多天之前是哪个月几号</p>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day9:知识点记录</title>
+    <url>/2020/09/26/Day9/</url>
+    <content><![CDATA[<h2 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h2><p>给定一个整数数组 nums 和一个目标值 target，<br>请你在该数组中找出和为目标值的那两个整数。<br>并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。<br>但是，数组中同一个元素不能使用两遍。</p>
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">给定 nums = [<span class="number">2</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">15</span>],target = <span class="number">9</span></span><br><span class="line">因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span> </span><br><span class="line">返回 [<span class="number">0</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>postman</title>
+    <url>/2022/06/10/postman/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>自动化测试</category>
+      </categories>
+      <tags>
+        <tag>接口测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jenkines</title>
+    <url>/2022/04/10/jenkines/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>自动化测试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>cypress</title>
+    <url>/2022/06/28/cypress/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>UI自动化测试框架</category>
+      </categories>
+      <tags>
+        <tag>自动化测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>垃圾回收机制</title>
+    <url>/2021/06/22/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Javascript 具有自动垃圾回收机制，会定期对那些我们不再使用的变量、</span><br><span class="line">对象所占用的内存进行释放</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">javascript 会找出不再使用的变量，不再使意味着这个生命周期结束。</span><br></pre></td></tr></table></figure>
+<p>javascript 中存在两种变量(全局变量和局部变量)</p>
+<p>全局变量的生命周期会一直持续,直到页面卸载。</p>
+<p>局部变量声明在函数中，它的生命周期从执行函数开始，直到执行函数结束。局部变量会在<code>堆</code>或者<code>栈</code>中上被分配相应的空间</p>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="比较-http0-9-和http1-0-的区别"><a href="#比较-http0-9-和http1-0-的区别" class="headerlink" title="比较 http0.9 和http1.0 的区别"></a>比较 http0.9 和http1.0 的区别</h1><ul>
+<li>http0.9 只是一个简单的协议，只有一个get 方法，没有首部，目标用来获取HTML</li>
+<li>http1.0 协议大量的内容：首部、响应码、重定向、错误、条件请求、内容编码等<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http0.9流程</span><br><span class="line"></span><br><span class="line">客户端,构建请求，通过DNS 查询IP 地址 ,</span><br><span class="line">三次握手建立TCP 连接,客户端发起请求,服务器相应。</span><br><span class="line">四次握手,断开 TCP连接（与服务器只有一个来回）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http1.0 流程</span><br><span class="line"></span><br><span class="line">客户端,构建请求,通过DNS查询IP地址,</span><br><span class="line">三次握手建立 TCP连接 ,客户端发起请求,服务器响应,</span><br><span class="line">四次握手,断开TCP连接(与服务器只有两个来回)</span><br><span class="line"></span><br><span class="line">--- 因为不足缺陷就有了http1.1 --- </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="关于-http1-1-以及http-2"><a href="#关于-http1-1-以及http-2" class="headerlink" title="关于 http1.1 以及http 2"></a>关于 http1.1 以及http 2</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http1.1 中浏览器再也不用为每个请求重新发起一个TCP连接,增加内容有：缓存相关首部的扩展</span><br><span class="line">OPTIONS方法，UPgrade首部,Range请求，压缩和传输编码,管道化等。</span><br><span class="line">但是还是不能够满足不了现在的web开发展需求,so ,就有了http 2 版本。</span><br><span class="line"></span><br><span class="line">使用http2 会比http1.1 在使用 TCP 时 用户体验的感知多数延迟的效果有了量化 的改善，</span><br><span class="line">以及提升了TCP 连接 的利用率(并行的实现机制不依赖与服务器的建立多个连接)</span><br><span class="line"></span><br><span class="line">对于http2 ，你可以用来运行一个 HTTP2 的服务器,获取并安装一个http2 的web服务器,</span><br><span class="line">下载并安装 一张TLS 证书,让浏览器和服务器 通过http2 来连接 （从数字证书认证机构申请 一张证书）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">了解http2 的协议 先让我们了解一下 web 页面的请求,就是用户在浏览器中呈现的效果,</span><br><span class="line">发生了些什么：获取资源的步骤：</span><br><span class="line">把待 请求的URL 放入队列，判断URL 是否亦在请求队列，不在的话 就结束, </span><br><span class="line">在的话就判断 请求域名 是否在DNS缓存中，没有的话就解析域名，</span><br><span class="line">有的话就就开启 TCP连接 ,进行HTTP 请求 ,初始化 完成TLS协议握手,向页面对应的URL 发送请求。</span><br><span class="line"></span><br><span class="line">接收响应以及 页面渲染 步骤：</span><br><span class="line">接收请求,判断 是否HTML 页面 ,是就解析HTML,对页面的引用资源排优先级，</span><br><span class="line">添加引用资源到请求队列（如果页面上的关键资源已经接收到,就开始渲染页面）,</span><br><span class="line">判断是否还要继续接收资源,继续解析渲染,直到结束。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="HTTP-的几种请求方法-用途"><a href="#HTTP-的几种请求方法-用途" class="headerlink" title="HTTP 的几种请求方法 用途"></a>HTTP 的几种请求方法 用途</h1><ul>
+<li>第一种方法 GET ：发送一个请求 来获取 服务器上的 某一些资源</li>
+<li>第二种方法 POST:向URL 指定的资源提交数据或附加新的数据</li>
+<li>第三种方法 PUT ：和POST 方法一样，可以向服务器 提交数据，但是他们之间<br>也有所不同PUT 指定了 资源在服务器的位置，而POST没有哦</li>
+<li>第四种方法 HEAD 方法：请求页面的首部</li>
+<li>第五种DELETE方法 ：删除服务器中的某资源 </li>
+<li>第六种OPTIOPS 方法： 它用于获取当前URL 所支持的方法,如果请求成功,<br>在 ALLOW 的头包含 类似GET POST 等信息。</li>
+<li>第七种 TARCE 方法：用于激发一个远程的,应用曾的请求消息回路。</li>
+<li>第八种 CONNECT 方法：把请求连接转换到TCP/IP通道。</li>
+</ul>
+<h1 id="从浏览器地址栏-输入URL-到显示页面的步骤"><a href="#从浏览器地址栏-输入URL-到显示页面的步骤" class="headerlink" title="从浏览器地址栏 输入URL 到显示页面的步骤"></a>从浏览器地址栏 输入URL 到显示页面的步骤</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">浏览器 根据请求的URL交给DNS 域名解析,查找真正的IP地址,向服务器发送请求,</span><br><span class="line">服务器交给后台处理后,返回数据,浏览器会接收到文件数据，比如：html,css,js 图像等。</span><br><span class="line">然后浏览器 会对加载的到的资源进行语法解析，建立相应的内部数据结构,</span><br><span class="line">载入 解析 到的资源文件，页面渲染，完成显示页面效果</span><br><span class="line"></span><br><span class="line">详解：</span><br><span class="line">从浏览器 接受url，开始进行网络请求线程，并发出一个完正的HTTP 请求；</span><br><span class="line">从服务器段接受请求到对应的后台接收请求，然后是后台和前台的http交互，</span><br><span class="line">其中的缓存问题（HTTP缓存），浏览器接收到的http 数据包的解析流程，</span><br><span class="line">css的可视化格式模型，js引擎的解析过程等，其他呈现页面效果。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.渲染引擎，是负责取得网页的内容，整理信息,以及计算 网页的 显示 方式，</span><br><span class="line">然后输出 到显示器 上</span><br><span class="line">2.js引擎 是用于解析 和执行js 来实现网页 的 动态效果</span><br><span class="line"></span><br><span class="line">---------------</span><br><span class="line">浏览器的内核 的不同 对于 网页的 语法解释 会有不同，所以渲染 的效果也不同，</span><br><span class="line">其实吗，最开始 渲染引擎 和js 引擎是没有区别的，后来js引擎越来越独立 so， </span><br><span class="line">内核就倾向于渲染引擎了。对于资源请求/获取，资源响应/页面渲染，</span><br><span class="line">会给网络带宽和设备资源带来压力，</span><br><span class="line">这个时候就会考虑到web的性能优化。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="WEB-的性能优化"><a href="#WEB-的性能优化" class="headerlink" title="WEB 的性能优化"></a>WEB 的性能优化</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">其中里面的性能关键</span><br><span class="line">什么是数据包 </span><br><span class="line">数据包(IP数据包) 指封装在 固定结构 的一系列 字节，</span><br><span class="line">它定义了数据包的长度，传输的细节，以及其他 与tcp 相关 的 信息。</span><br><span class="line">延迟 ：指ip 数据包从一个网络端点 所花费的时间</span><br><span class="line">（所花费的时间在于往返时延，是延迟的时间的两倍）</span><br><span class="line">带宽： 只要带宽没有饱和，两个端点 的连接会一次处理 </span><br><span class="line">尽可能多的 数据量（所以带宽可能会成为性能 的瓶颈）</span><br><span class="line">建立连接时间:在客户端和服务器之间 建立连接往返数据（三次握手）</span><br><span class="line">TCP的三次握手：客户端向服务器 发送 SYN包,服务器端 返回相应的SYN的 ACK响应 </span><br><span class="line">以及新的 SYN包，然后客户端返回相应的 ACK（在客户端和服务器之间建立正常的TCP网络连接时，</span><br><span class="line">客户端首先发出一个SYN消息，服务器 使用 SYN+ACK 应答 表示接受 这个消息 ，</span><br><span class="line">最后客户端以ACk消息响应 ）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SYN 是同步序列编号，是TCP/IP 建立连接 时使用 的 握手信息</span><br><span class="line">ACK 是确认字符，在数据通信中，接受站给发给站的 一种 传输类 的 控制字符 。</span><br><span class="line">表示 发来的 数据已经确认 接受无误。</span><br><span class="line">在TCP/IP协议中，如果接受方成功的接收到了数据，</span><br><span class="line">那么会回复一个ACk数据,通过ACK 信号 有自己固定格式，长度大小，</span><br><span class="line">由接收方回复给发送方。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">详解 三次握手</span><br><span class="line">第一次握手,建立连接时，客户端发送SYN包到服务器,并进入到SYN_SENT状态，</span><br><span class="line">等待服务器确认,其中SYN就是同步序列编号</span><br><span class="line"></span><br><span class="line">第二次握手 服务器收到SNY包，必须确认客户的SYN,同时自己也发送 一个SYN 包,</span><br><span class="line">即是 SYN+ACK 包，此时服务器进入 SYN_RECV状态</span><br><span class="line"></span><br><span class="line">第三次握手 ，客户端收到服务器 的SYN+ACK包，向服务器发送确认包ACK,此包发送完毕，</span><br><span class="line">客户端和服务器进入ESTABLISHED(TCP成功连接)状态,完成三次握手。</span><br><span class="line">完成三次握手，客户端和服务器 开始传输数据</span><br><span class="line"></span><br><span class="line">-----------------------</span><br><span class="line">  TLS协商时间 (TLS 会造成 额外的往返传输)</span><br><span class="line">  1. 客户端 发起HTTP 连接,需要进行传输层 安全协议协商</span><br><span class="line">  2.TLS用来取代 安全套接层SSL</span><br><span class="line">  除了网络，还有页面内容本身或服务器性能，如首字节时间 TTFB ，</span><br><span class="line">  内容下载时间，开始渲染时间，文档加载完成时间等。</span><br><span class="line">  那么什么是 TTFB ,它是指 客户端从开始定位 到web页面 ,</span><br><span class="line">  至接受 到主体页面响应 的第一字节 所耗费 的 内容下载 时间,他的测量,</span><br><span class="line">  从浏览器 发起请求 至收到 其 第一字节之间的耗时。</span><br><span class="line">  内容下载 时间 是等同于 被请求资源 的最后字节到达的时间。</span><br><span class="line">  开始渲染时间 从客户端 看到空白页面的时长。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="web-性能优化技术-（减少客户端网络延迟和优化页面渲染性能来提升web性能）"><a href="#web-性能优化技术-（减少客户端网络延迟和优化页面渲染性能来提升web性能）" class="headerlink" title="web 性能优化技术 （减少客户端网络延迟和优化页面渲染性能来提升web性能）"></a>web 性能优化技术 （减少客户端网络延迟和优化页面渲染性能来提升web性能）</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">优化技术</span><br><span class="line">- DNS查询优化</span><br><span class="line">- 客户端缓存</span><br><span class="line">- 优化TCP 连接</span><br><span class="line">- 避免重定向</span><br><span class="line">- 网络边缘 的缓存</span><br><span class="line">- 条件缓存</span><br><span class="line">- 压缩和代码极简化</span><br><span class="line">- 图片优化</span><br></pre></td></tr></table></figure>
+<h1 id="http1-1"><a href="#http1-1" class="headerlink" title="http1.1"></a>http1.1</h1><ul>
+<li>改进 持久连接 和cdn 域名的分片机制</li>
+<li>不成熟 的HTTP管道化</li>
+<li>提供虚拟主机支持</li>
+<li>对动态生成 的内容完美支持</li>
+<li>引入cookie以及安全机制<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">对于http1的问题，迎接来了HTTP2 其中http1 的问题</span><br><span class="line">队头阻塞 ，大多数情况下，浏览器会希望同时获取许多资源，</span><br><span class="line">但http1 未提供机制 来同时请求这些资源</span><br><span class="line">如果仅是使用一个连接，需要发送请求，等待响应，然后才能发送下一个请求。</span><br><span class="line"></span><br><span class="line">在http1 中 要给特性 为管道化，可以 允许一次 发送一组请求，</span><br><span class="line">但是需要按照发送顺序依次接受 响应，</span><br><span class="line">所以在请求应答过程中，如果发生什么情况,剩下的工作都会被阻塞，</span><br><span class="line">这就是队头 阻塞（阻塞在那次请求应答发生错误），</span><br><span class="line">阻塞网络传输和web页面的渲染，直到失去响应。</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>协议</tag>
+      </tags>
+  </entry>
+</search>
